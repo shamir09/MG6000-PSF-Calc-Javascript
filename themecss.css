@@ -17,15 +17,17 @@ a:hover {
 .active {
     color: red;
 }
+body {
+    text-align: center;
+}
 
 .title {
     margin-top: 50px;
     margin-bottom: 100px;
     font-family: 'Righteous', 'cursive';
-    color: darkgrey;
+    color: #D1CACA;
     font-size: 40px;
 }
-
 
 form {
     width: 300px;
@@ -62,8 +64,7 @@ form-lbl {
     color: gray;
     opacity:0.7;
     padding: 6px;
-    
-}
+    }
 
 #container_box {
     margin-bottom: 30px;
@@ -81,18 +82,4 @@ h1 {
 }
 footer {
     margin-top:140px;
-}
-#storefront2 {
-     background-image:url('storefront2.png');
-     background-repeat:no-repeat;
-     opacity: .4;
-     float: left;
-     width:20%;
-}
-#storefront {
-     background-image:url('storefront.png');
-     background-repeat:no-repeat;
-     opacity: .2;
-     float: right;
-     width:20%;
 }
