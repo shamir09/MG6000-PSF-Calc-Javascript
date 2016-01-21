@@ -9,7 +9,11 @@ READ ME FILE  |  MG-6000 PRESSURE CALCULATOR
 	INPUT - the program uses two variables to calculate Windload.
 		*Width    (format accepted: inches “)
 		*Height   (format accepted: inches “)
-			Developing: The insertion of vertical and horizontal lites to calculate pressure. 
+			Under Development: 
+				The insertion of vertical and horizontal lites to calculate Windload inserting total configuration.
+				Glass Interlayer Composition (Pvb or SGP)
+				Screw Options and corresponding pressures.
+				
 
 	
 DISCLAIMER    |     
