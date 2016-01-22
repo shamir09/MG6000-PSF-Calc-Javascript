@@ -24,6 +24,7 @@ DISCLAIMER    |
 CONTACT ME    |     DEVELOPER
 
 	- SHAMIR AJATE     shamirajate@gmail.com
+	- YUDIEL CURBELO   yudiel@mrglasswindows.com
 		v1 - 1/19/15
 
 
