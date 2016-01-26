@@ -23,7 +23,7 @@ body {
 
 .title {
     margin-top: 50px;
-    margin-bottom: -5px;
+    margin-bottom: -2px;
     font-family: 'Righteous', 'cursive';
     color: #D1CACA;
     font-size: 40px;
@@ -66,8 +66,9 @@ form-lbl {
     }
 
 #FL_Product {
-    margin-bottom: 100px;
-    color: red;
+    display: inline-block;
+    margin-bottom: 20px;
+    color: darkslategray;
 }
 #container_box {
     margin-bottom: 30px;
