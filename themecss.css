@@ -10,7 +10,7 @@ a:visited {
 }
 
 a:hover {
-    color: red;
+    color: darkgray;
     text-decoration: none;
 }
 
@@ -23,7 +23,7 @@ body {
 
 .title {
     margin-top: 50px;
-    margin-bottom: -2px;
+    margin-bottom: -3px;
     font-family: 'Righteous', 'cursive';
     color: #D1CACA;
     font-size: 40px;
