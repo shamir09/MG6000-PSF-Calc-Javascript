@@ -10,7 +10,7 @@ a:visited {
 }
 
 a:hover {
-    color: darkgray;
+    color: red;
     text-decoration: none;
 }
 
@@ -68,7 +68,7 @@ form-lbl {
 #FL_Product {
     display: inline-block;
     margin-bottom: 20px;
-    color: darkslategray;
+    color: #6C71B9;
 }
 #container_box {
     margin-bottom: 30px;
