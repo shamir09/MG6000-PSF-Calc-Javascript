@@ -1,8 +1,33 @@
 // JavaScript source code
+
+function ClearFields() {
+    var psfResult = "";
+    document.getElementById("PSF_Result").innerHTML = psfResult;
+}
+
+document.onkeydown = function (evt) {
+    evt = evt || window.event;
+    if (evt.keyCode == 27) {
+        ClearFields();
+        document.getElementById("reset_btn").click();
+        document.getElementById("widthInput").focus();
+    }
+    if (evt.keyCode == 13) {
+        CalculatePSF();
+        }
+};
+
 function CalculatePSF() {
+try {
     var width = document.getElementById("widthInput").value;
     var height = document.getElementById("heightInput").value;
     var psfResult;
+
+    if (width == "" || height == ""){
+      alert('Please check the information entered in the Fields')
+      ClearFields();
+      return;
+      }
 
     if (height <= 90)                  // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
     {
@@ -32,7 +57,7 @@ function CalculatePSF() {
         else if (width <= 60) { psfResult = (" =  +100.0 / -115.0 PSF" + "   M3 / J2 *Reinforced"); }       // M3 / J2
         else if (width <= 66) { psfResult = (" =  +100.0 / -111.7 PSF" + "   M3 / J2 *Reinforced"); }       // M3 / J2
         else if (width <= 67) { psfResult = (" =  +100.0 / -110.5 PSF" + "   M3 / J2 *Reinforced"); }       // M3 / J2
-        else if (width > 67) { psfResult = (" DOES NOT COMPLY WITH PRODUCT APPROVAL"); }
+        else if (width > 67) { psfResult = ("DOES NOT COMPLY WITH PRODUCT APPROVAL"); }
     }
     else if (height <= 114)            // At Height of 114"   &   Width:  30", 36", 42", 48", 51"                     M1 / J1
     {                                                            // &   Width:  30", 36", 42", 48", 54" 60" 63"             M3 / J2
@@ -120,26 +145,11 @@ function CalculatePSF() {
         else if (width <= 36) { psfResult = (" =  +65.0 / -65.0 PSF" + "   M2 / J2 *Reinforced <br/>  = +100.0 / -102.8 PSF  M3 / J2 *Reinforced"); }
         else if (width <= 42) { psfResult = (" =  +59.6 / -59.6 PSF" + "   M3 / J2 *Reinforced <br/>  =  +88.9 / -88.9  PSF  M3 / J2 *Reinforced"); }
         else if (width <= 48) { psfResult = (" =  +52.7 / -52.7 PSF" + "   M3 / J2 *Reinforced <br/>  =  +78.6 / -78.6  PSF  M3 / J2 *Reinforced"); }
-        else if (width > 48) { psfResult = ("\t DOES NOT COMPLY WITH PRODUCT APPROVAL"); }
+        else if (width > 48) { psfResult = ("DOES NOT COMPLY WITH PRODUCT APPROVAL"); }
     }
-
     document.getElementById("PSF_Result").innerHTML = psfResult;
 }
-
-
-function ClearFields() {
-    var psfResult = "";
-    document.getElementById("PSF_Result").innerHTML = psfResult;
+catch (error) {
+  document.getElementById("PSF_Result").innerHTML = "You triggered an error";
 }
-
-document.onkeydown = function (evt) {
-    evt = evt || window.event;
-    if (evt.keyCode == 27) {
-        ClearFields();
-        document.getElementById("reset_btn").click();
-        document.getElementById("widthInput").focus();
-    }
-    if (evt.keyCode == 13) {
-        CalculatePSF();
-        }
-};
+}
