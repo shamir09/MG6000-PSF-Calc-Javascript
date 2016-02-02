@@ -24,7 +24,7 @@ try {
     var psfResult;
 
     if (width == "" || height == ""){
-      alert('Please check the information entered in the Fields')
+      alert('Please check the Input Fields! At least one is Blank :)')
       ClearFields();
       return;
       }
