@@ -15,7 +15,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="themecss.css">
     <!--<link rel="stylesheet" type="text/css" href="mytheme.css">-->
-    <script type="text/javascript" src="MG6000psfCalculator.js"></script>
+    <script type="text/javascript" src="assets/MG6000psfCalculator.js"></script>
+    <script type="text/javascript" src="assets/animation.js"></script>
 
     <meta name="description" content="MG 6000 PSF Calculator" />
 
@@ -23,14 +24,14 @@
 </head>
 <body>
     <a href="http://www.mrglasswindows.com/" alt="Mr. Glass Windows and Doors Official Website">
-        <img src="MrGlassManufacturing.png" id="mrglasslogo" width="250" height="200px" alt="Mr Glass doors & Windows Logo" />
+        <img src="assets/MrGlassManufacturing.png" id="mrglasslogo" width="250" height="200px" alt="Mr Glass doors & Windows Logo" />
     </a><br/>
     <!--                  FORM                     -->
-    <h1 class="title">MG-6000<br/> PSF Calculator</h1>
+    <h1 class="title" id="headTitle">MG-6000<br/> PSF Calculator</h1>
     <a href="FL18411_R0_II_SS - MG 6000 ALUM WINDOW WALL SYSTEM (LMI) W15-71.pdf" target="_blank" id="FL_Product" class="hover">
         <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> FL-18411</a><br/>
 
-        <form name="MG-6000" method="post" action="psfcalc()">
+        <form name="MG-6000" method="post" action="psfcalc()" id="contForm">
                <div class="form-group" id="form-box">
 
                     Width :
@@ -55,10 +56,5 @@
 </form>
 
     <br/>
-
-    <!--<footer>
-        Copyright &copy; 2014   All rights reserved MrGlassDoors&amp;Windows.com
-    </footer>-->
-
 </body>
 </html>
