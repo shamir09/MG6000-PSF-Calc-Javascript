@@ -19,7 +19,8 @@ a:hover {
 }
 body {
     text-align: center;
-}
+    width="100%"
+    }
 
 .title {
     margin-top: 30px;
