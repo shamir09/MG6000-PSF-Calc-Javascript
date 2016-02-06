@@ -34,15 +34,15 @@ try {
         if (width <= 55) { psfResult = ("=  +100.0 / -110.0 PSF M1 / J1"); }
         else if (width <= 60) { psfResult = (" =  +100.0 / -110.0 PSF  M1 / J1"); }
         else if (width > 60) { psfResult = ("DOES NOT COMPLY WITH PRODUCT APPROVAL"); }
-        if (height <= 96)             // At Height of 96"   &   Width:  30", 36", 42", 48", 51", 54", 60"            M1 / J1
+    }
+    if (height <= 96)             // At Height of 96"   &   Width:  30", 36", 42", 48", 51", 54", 60"            M1 / J1
         {                                        // At Height of 120"   &   Width:  30", 36", 42", 48", 51", 54", 60" 66", 72"   M3 / J2
             if (width <= 48) { psfResult = (" =  +100.0 / -110.0 PSF  M1 / J1 <br/>  =  +100.0 / -115.0 PSF  M3 / J2 *Reinforced"); }
             else if (width <= 51) { psfResult = (" =  +100.0 / -107.6 PSF  M1 / J1 <br/>  =  +100.0 / -115.0 PSF  M3 / J2 *Reinforced"); }
             else if (width <= 60) { psfResult = (" =   + 70.0  /  - 70.0  PSF  M1 / J1 <br/> = +100.0 / -115.0 PSF  M3 / J2 *Reinforced"); }
             else if (width <= 72) { psfResult = (" =  +100.0 / -115.0  PSF  M3 / J2 *Reinforced"); }
-            else if (width > 72) { psfResult = ("DOES NOT COMPLY WITH PRODUCT APPROVAL"); }
+            else if (width > 73) { psfResult = ("DOES NOT COMPLY WITH PRODUCT APPROVAL"); }
         }
-    }
 
     else if (height <= 102)            // At Height of 102"  &   Width:  30", 36", 42", 48", 54", 57"                 M1 / J1
     {                                                           // &   Width:  30", 36", 42", 48", 54", 60" 66", 71"        M3 / J2
