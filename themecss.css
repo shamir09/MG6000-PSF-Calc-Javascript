@@ -19,7 +19,9 @@ a:hover {
 }
 body {
     text-align: center;
-    width="100%"
+    width="100%";
+    margin-left: auto;
+    margin-right:auto;
     }
 
 .title {
@@ -76,10 +78,13 @@ form-lbl {
 }
 
 #PSF_Result {
-     margin-top: 30px;
-     text-align:left;
-     width: 550px;
-     }
+    display:inline-flex;
+    position:absolute;
+    bottom: 50px;
+    width:500px;
+    margin-left:-150px;
+    text-align: left;
+    }
 h1 {
     color: white;
     font-family: 'Trebuchet MS';
