@@ -27,7 +27,7 @@ body {
 .title {
     margin-top: 30px;
     margin-bottom: -3px;
-    font-family: 'Righteous', 'cursive';
+    font-family: 'Montserrat', 'cursive';
     color: #D1CACA;
     font-size: 40px;
 }
@@ -78,13 +78,15 @@ form-lbl {
 }
 
 #PSF_Result {
-    display:inline-flex;
-    position:absolute;
-    bottom: 50px;
-    width:500px;
-    margin-left:-150px;
+    display:inherit;
+    margin-top:15px;
+    width:600px;
     text-align: left;
     }
+#J1_M1, #J2_M2, #J2_M3 {
+  display: none;
+  padding-right: 30px;
+}
 h1 {
     color: white;
     font-family: 'Trebuchet MS';

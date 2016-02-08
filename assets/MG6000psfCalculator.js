@@ -3,7 +3,10 @@
 function ClearFields() {
     var psfResult = "";
     document.getElementById("PSF_Result").innerHTML = psfResult;
-}
+    document.getElementById("J1_M1").style.display = "none";
+    document.getElementById("J2_M2").style.display = "none";
+    document.getElementById("J2_M3").style.display = "none";
+    }
 
 document.onkeydown = function (evt) {
     evt = evt || window.event;
@@ -19,8 +22,8 @@ document.onkeydown = function (evt) {
 
 function CalculatePSF() {
 try {
-    var width = document.getElementById("widthInput").value;
-    var height = document.getElementById("heightInput").value;
+    var width = (document.getElementById("widthInput").value)/(document.getElementById("horizLitesInput").value);
+    var height = (document.getElementById("heightInput").value)/(document.getElementById("vertiLitesInput").value);
     var psfResult;
 
     if (width == "" || height == ""){
@@ -30,7 +33,7 @@ try {
       }
 
 // Declare and Initialize PSF Mull Capacity for FULL VIEW PANELS
-//Variable Declaration Format (PSF_{+positive pressure}_{negative pressure}_{MULL OPTION}_{JAMB})
+//Variable Declaration Format (PSF_{+positive pressure}_{negative pressure}_{JAMB OPTION}_{MULL OPTION})
 var psf_62d1_62d1_J1_M1 = "=   +62.1 /  -62.1 PSF  J1 / M1";
 var psf_69d4_69d4_J1_M1 = "=   +69.4 /  -69.4 PSF  J1 / M1";
 var psf_69d9_69d9_J1_M1 = "=   +69.9 /  -69.9 PSF  J1 / M1";
@@ -72,8 +75,10 @@ var NotCompliant = NotCompliant;
 
   if (height <= 90) {                 // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
         if (width <= 55) { psfResult = psf_100_110_J1_M1; }
-        else if (width <= 60) { psfResult = psf_100_110_J1_M1; }
-        else if (width > 60) { psfResult = psf_70_70_J1_M1; }
+        else if (width < 60) { psfResult = psf_100_110_J1_M1; }
+        else if (width <= 60) { psfResult = psf_70_70_J1_M1; }
+        else if (width <= 72) { psfResult = psf_100_115_J2_M3; }
+        else if (width >= 73) { psfResult = NotCompliant; }
       }
   else if (height <= 96)                             // At Height of 96"   &   Width:  30", 36", 42", 48", 51", 54", 60"            M1 / J1
         {                                        // At Height of 120"   &   Width:  30", 36", 42", 48", 51", 54", 60" 66", 72"      J2 / M3
@@ -174,7 +179,22 @@ var NotCompliant = NotCompliant;
         else if (width <= 48) { psfResult =  psf_52d7_52d7_J2_M3 + "<br/> " + psf_78d6_78d6_J2_M3;}
         else if (width > 48) { psfResult = NotCompliant;}
     }
+
     document.getElementById("PSF_Result").innerHTML = psfResult;
+    if(psfResult.indexOf("J1 / M1") > 1){
+      document.getElementById("J1_M1").style.display = "inline";
+    }
+    if(psfResult.indexOf("J2 / M2") > 1){
+      document.getElementById("J2_M2").style.display = "inline";
+    }
+    if(psfResult.indexOf("J2 / M3") > 1){
+      document.getElementById("J2_M3").style.display = "inline";
+    }
+
+
+
+
+
 }
 catch (error) {
   document.getElementById("PSF_Result").innerHTML = "You triggered an error";
