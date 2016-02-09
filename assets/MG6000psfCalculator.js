@@ -43,12 +43,14 @@ var psf_98d2_98d2_J1_M1 = "   +98.2 /  -98.2 PSF  J1 / M1";
 var psf_100_107d6_J1_M1 = "  +100.0 / -107.6 PSF  J1 / M1";
 var psf_100_110_J1_M1   = "  +100.0 / -110.0 PSF  J1 / M1";
 
-var psf_59d6_59d6_J2_M2 = "   +59.6 /  -59.6 PSF  J2 / M2 *Reinforced";
-var psf_60d1_60d1_J2_M2 = "   +60.1 /  -60.1 PSF  J2 / M2 *Reinforced";
-var psf_65_65_J2_M2     = "   +65.0 /  -65.0 PSF  J2 / M2 *Reinforced";
+var psf_58_58_J2_M2     = "   +58.0 /  -58.0 PSF  J2 / M2 *Aluminum";
+var psf_59d6_59d6_J2_M2 = "   +59.6 /  -59.6 PSF  J2 / M2 *Aluminum";
+var psf_60d1_60d1_J2_M2 = "   +60.1 /  -60.1 PSF  J2 / M2 *Aluminum";
+var psf_65_65_J2_M2     = "   +65.0 /  -65.0 PSF  J2 / M2 *Aluminum";
 
 var psf_52d7_52d7_J2_M3 = "   +52.7 /  -52.7 PSF  J2 / M3 *Steel";
 var psf_78d6_78d6_J2_M3 = "   +78.6 /  -78.6 PSF  J2 / M3 *Steel";
+var psf_82d8_82d8_J2_M3 = "   +82.8 /  -82.8 PSF  J2 / M3 *Steel";
 var psf_85_9_85d9_J2_M3 = "   +85.9 /  -85.9 PSF  J2 / M3 *Steel";
 var psf_86d2_86d2_J2_M3 = "   +86.2 /  -86.2 PSF  J2 / M3 *Steel";
 var psf_88d9_88d9_J2_M3 = "   +88.9 /  -88.9 PSF  J2 / M3 *Steel";
@@ -169,6 +171,11 @@ var NotCompliant = "DOES NOT COMPLY WITH APPROVAL DOCUMENT";
         else if (width <= 48) {
             psfResult = (psf_60d1_60d1_J2_M2);
             psfResult += "<br/> " + psf_85_9_85d9_J2_M3;
+            psfResult += "<br/> " + psf_86_5_86d5_J2_M3_CRS;
+        }
+        else if (width <= 50) {
+            psfResult = (psf_58_58_J2_M2);
+            psfResult += "<br/> " + psf_82d8_82d8_J2_M3;
             psfResult += "<br/> " + psf_86_5_86d5_J2_M3_CRS;
         }
     }
