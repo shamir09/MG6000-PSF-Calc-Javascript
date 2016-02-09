@@ -83,7 +83,7 @@ form-lbl {
     width:600px;
     text-align: left;
     }
-#J1_M1, #J2_M2, #J2_M3 {
+#J1_M1, #J2_M2, #J2_M3_S, #J2_M3_CRS {
   display: none;
   padding-right: 30px;
 }
