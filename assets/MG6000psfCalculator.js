@@ -150,7 +150,7 @@ var NotCompliant = "DOES NOT COMPLY WITH APPROVAL DOCUMENT";
         if (width <= 36) { psfResult = psf_100_110_M3_M2; }
         else if (width <= 42) {
             psfResult = psf_100_106d6_J2_M3_CRS;
-            psfResult = psf_100_110_J2_M3;
+            psfResult += "<br/> " + psf_100_110_J2_M3;
         }
         else if (width <= 48) {
             psfResult = psf_65_65_J2_M2;
