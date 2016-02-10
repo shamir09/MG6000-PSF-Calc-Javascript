@@ -73,6 +73,19 @@ var psf_100_106d6_J2_M3_CRS= " +100.0 / -106.6 PSF  J2 / M3 *Cold Rolled";
 var psf_100_107d_J2_M3_CRS = " +100.0 / -107.6 PSF  J2 / M3 *Cold Rolled";
 var psf_100_110_J2_M3_CRS  = " +100.0 / -110.0 PSF  J2 / M3 *Cold Rolled";
 var psf_100_115_J2_M3_CRS  = " +100.0 / -115.0 PSF  J2 / M3 *Cold Rolled";
+// END OF FULL VIEW PANELS TABLE
+
+//START OF HORIZONTAL DIVISIONS TABLE
+var psf_58d4_58d4_J1_M1  =" +58.4 / -58.4 PSF   J1 / M1";
+var psf_64d1_64d1_J1_M1  =" +64.1 / -64.1 PSF   J1 / M1";
+var psf_66d7_66d7_J1_M1  =" +66.7 / -66.7 PSF   J1 / M1";
+var psf_68d1_68d1_J1_M1  =" +68.1 / -68.1 PSF   J1 / M1";
+var psf_97d7_97d7_J1_M1 ="  +97.7 / -97.7 PSF   J1 / M1";
+var psf_100_106_J1_M1   =" +100.0 / -106.0 PSF  J1 / M1";
+var psf_100_103d8_J1_M1 =" +100.0 / -103.8 PSF  J1 / M1";
+var psf_100_105d1_J1_M1 =" +100.0 / -105.1 PSF  J1 / M1";
+
+
 
 var NotCompliant = "DOES NOT COMPLY WITH APPROVAL DOCUMENT";
 

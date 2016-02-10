@@ -27,4 +27,5 @@ CONTACT US    |     DEVELOPERS
 
 	- SHAMIR AJATE     shamirajate@gmail.com
 	- YUDIEL CURBELO   yudiel@mrglasswindows.com
+	- DANIEL GONSALEZ  daniel@mrglasswindows.com
 		v1 - 1/19/15
