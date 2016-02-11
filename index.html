@@ -50,20 +50,23 @@
                <div class="form-group" id="form-box">
 
                     Width :
-                    <input type="number" class="form-control" name="widthInput" maxlength="6" id="widthInput" autofocus required><br />
+                    <input type="number" class="form-control" name="widthInput" maxlength="6" id="widthInput" autofocus required>
+                    <span class="glyphicon glyphicon-resize-horizontal"></span><br />
 
                     Height:
-                    <input type="number" class="form-control" name="heightInput" maxlength="6" id="heightInput" required><br />
-
-                    HLites:
-                    <input type="number" class="form-control" name="horizLitesInput" maxlength="3" id="horizLitesInput" value="1" required><br />
+                    <input type="number" class="form-control" name="heightInput" maxlength="6" id="heightInput" required>
+                    <span class="glyphicon glyphicon-resize-vertical"></span><br />
 
                     VLites:
-                    <input type="number" class="form-control" name="vertiLitesInput" maxlength="3" id="vertiLitesInput" value="1" required><br />
+                    <input type="number" class="form-control" name="vertiLitesInput" maxlength="3" id="vertiLitesInput" value="1" required>
+                      <span class="glyphicon glyphicon-pause"></span><br />
+
+                    HLites:
+                    <input type="number" class="form-control" name="horizLitesInput" maxlength="3" id="horizLitesInput" value="1" required>
+                    <span class="glyphicon glyphicon-menu-hamburger"></span><br /><br />
 
                     <input type="button" value="Calculate" class="contactmeboxes" id="calculate_btn" onclick="CalculatePSF()">
                     <input type="reset" value="Reset" class="contactmeboxes" id="reset_btn" onclick="ClearFields()">
-
 
                     <div id="PSF_Result"></div>
                 </div>
