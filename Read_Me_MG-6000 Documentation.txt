@@ -4,17 +4,17 @@ READ ME FILE  |  MG-6000 PRESSURE CALCULATOR
 	System Approval: # FL18411
 
 	This webpage was created to facilitate the calculation of the Windload capacity the MG-6000 Series. The MG-6000 is an
-	Impact Resistant Storefront/Fixed Window 	System that supports 9/16" Laminated Glass or 1 5/16" Laminated Insulated
+	Impact Resistant Storefront/Fixed Window System that supports 9/16" Laminated Glass or 1 5/16" Laminated Insulated
 	Glass with both PVB & SGP options and can resist Wind Loads of -100.0 / +115.0 PSF.
 
 
 
 	INPUT - the program uses two variables to calculate Windload.
-		*Width    (format accepted: inches \")
-		*Height   (format accepted: inches \")
+		*Width    (format accepted: inches ")
+		*Height   (format accepted: inches ")
 			Under Development:
 				The insertion of vertical and horizontal divisions/lites to calculate Windload inserting total configuration.
-				Glass Interlayer Composition (Pvb or SGP)
+				Glass Interlayer Composition (PVB or SGP)
 				Screw Options and corresponding pressures
 				Drawing a Sketch of the system entered
 
@@ -25,7 +25,7 @@ DISCLAIMER    |
 
 CONTACT US    |     DEVELOPERS
 
-	- SHAMIR AJATE     shamirajate@gmail.com
+	- SHAMIR AJATE     shamir@mrglasswindows.com
 	- YUDIEL CURBELO   yudiel@mrglasswindows.com
 	- DANIEL GONSALEZ  daniel@mrglasswindows.com
-		v1 - 1/19/15
+		
