@@ -23,12 +23,17 @@ document.onkeydown = function (evt) {
 
 function CalculatePSF() {
 try {
-    var width = (document.getElementById("widthInput").value)/(document.getElementById("vertiLitesInput").value);
-    var height = (document.getElementById("heightInput").value)/(document.getElementById("horizLitesInput").value);
+    var widthInputValue = document.getElementById("widthInput").value;
+    var heightInputValue = (document.getElementById("heightInput").value);
+    var verticalLitesValue = (document.getElementById("vertiLitesInput").value);
+    var horizontalLitesValue = (document.getElementById("horizLitesInput").value);
+
+    var width = widthInputValue / verticalLitesValue;
+    var height = heightInputValue / horizontalLitesValue;
     var psfResult;
 
     if (width == "" || height == ""){
-      alert('Please check the Input Fields! At least one is Blank :)')
+      alert('Please check the Input Fields!')
       ClearFields();
       return;
       }
@@ -108,18 +113,18 @@ var psf_100_107d8_J2_M3 = " +100.0 /-107.8 PSF  J2 / M3 *Steel";
 
 // Space for Reinforced Cold Steel
 
-
-
 var MaxWidthPerPanel = "NOA Maximum Width per Panel at this height is ";
 
-  if (height <= 90) {                 // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
+//Check for Horizontal Divisions - If = 1 Use FULL VIEW TABLE BECAUSE THERE ARE NO DIVISIONS
+if (horizontalLitesValue == 1) {
+    if (height <= 90) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
         if (width <= 55) { psfResult = psf_100_110_J1_M1; }
         else if (width < 60) { psfResult = psf_100_110_J1_M1; }
         else if (width <= 60) { psfResult = psf_70_70_J1_M1; }
         else if (width <= 72) { psfResult = psf_100_115_J2_M3; }
         else if (width > 72) { psfResult = MaxWidthPerPanel + 72 + "\""; }
       }
-  else if (height <= 96)                             // At Height of 96"   &   Width:  30", 36", 42", 48", 51", 54", 60"            M1 / J1
+  else if (height <= 96)                         // At Height of 96"   &   Width:  30", 36", 42", 48", 51", 54", 60"                M1 / J1
         {                                        // At Height of 120"   &   Width:  30", 36", 42", 48", 51", 54", 60" 66", 72"      J2 / M3
             if (width <= 48) { psfResult = psf_100_110_J1_M1 +         "<br/> " + psf_100_115_J2_M3; }
             else if (width <= 51) { psfResult = psf_100_107d6_J1_M1 +  "<br/> "  + psf_100_115_J2_M3; }
@@ -127,33 +132,33 @@ var MaxWidthPerPanel = "NOA Maximum Width per Panel at this height is ";
             else if (width <= 72) { psfResult = psf_100_115_J2_M3; }
             else if (width > 72) { psfResult = MaxWidthPerPanel + 72 + "\""; }
           }
-    else if (height <= 102)            // At Height of 102"  &   Width:  30", 36", 42", 48", 54", 57"                       M1 / J1
-        {                                                           // &   Width:  30", 36", 42", 48", 54", 60" 66", 71"    J2 / M3
+    else if (height <= 102)                      // At Height of 102"  &   Width:  30", 36", 42", 48", 54", 57"                       M1 / J1
+        {                                        // &   Width:  30", 36", 42", 48", 54", 60" 66", 71"    J2 / M3
         if (width <= 42) { psfResult = psf_100_110_J1_M1 +  "<br/> " + psf_100_115_J2_M3 ; }
         else if (width <= 48) { psfResult = psf_98d2_98d2_J1_M1 +  "<br/> " + psf_100_115_J2_M3; }
         else if (width <= 57) { psfResult = psf_70_70_J1_M1 +"<br/> " + psf_100_115_J2_M3; }
         else if (width <= 71) { psfResult = psf_100_115_J2_M3; }       // M2 / J2
         else if (width > 71)  { psfResult = MaxWidthPerPanel + 71 + "\""; }
       }
-    else if (height <= 108)            // At Height of 108"   &   Width:  30", 36", 42", 48", 54"                          M1 / J1
-    {                                            // At Height of 108"   &   Width:  30", 36", 42", 48", 54" 60" 66" 67"    J2 / M3
+    else if (height <= 108)                      // At Height of 108"   &   Width:  30", 36", 42", 48", 54"                          M1 / J1
+    {                                            // At Height of 108"   &   Width:  30", 36", 42", 48", 54" 60" 66" 67"              J2 / M3
         if      (width <= 54) { psfResult = psf_70_70_J1_M1 + "<br/> " + psf_100_115_J2_M3;}
-        else if (width <= 60) { psfResult = psf_100_115_J2_M3;}                                                    // J2 / M3
-        else if (width <= 66) { psfResult = psf_100_111d7_J2_M3;}                                                  // J2 / M3
-        else if (width <= 67) { psfResult = psf_100_110d5_J2_M3;}                                                  // J2 / M3
+        else if (width <= 60) { psfResult = psf_100_115_J2_M3;}                                                                    // J2 / M3
+        else if (width <= 66) { psfResult = psf_100_111d7_J2_M3;}                                                                  // J2 / M3
+        else if (width <= 67) { psfResult = psf_100_110d5_J2_M3;}                                                                  // J2 / M3
         else if (width > 67)  { psfResult = MaxWidthPerPanel + 67 + "\""; }
     }
-    else if (height <= 114)            // At Height of 114"   &   Width:  30", 36", 42", 48", 51"                  M1 / J1
-    {                                                            // &   Width:  30", 36", 42", 48", 54" 60" 63"    J2 / M3
+    else if (height <= 114)                      // At Height of 114"   &   Width:  30", 36", 42", 48", 51"                         M1 / J1
+    {                                            // &   Width:  30", 36", 42", 48", 54" 60" 63"                                     J2 / M3
         if (width <= 48)      { psfResult = psf_70_70_J1_M1     + "<br/> " + psf_100_115_J2_M3;}
         else if (width <= 51) { psfResult = psf_69d4_69d4_J1_M1 + "<br/> " + psf_100_115_J2_M3;}
         else if (width <= 54) { psfResult = psf_100_115_J2_M3;}
         else if (width <= 63) { psfResult = psf_100_102d4_J2_M3  + "<br/> " + psf_100_115_J2_M3_CRS ;}
         else if (width > 63)  { psfResult = MaxWidthPerPanel + 63 + "\""; }
     }
-    else if (height <= 120)            // At Height of 120"   &   Width:  30", 36", 42", 48"                 M1 / J1
-                                       // At Height of 120"   &   Width:  48", 54", 58"                      M2 / J2
-        {                               // At Height of 120"  &   Width:  54", 60"                           M2 / J2 *Reinforced Cold Rolled
+    else if (height <= 120)                     // At Height of 120"  &   Width:  30", 36", 42", 48"                             M1 / J1
+                                                // At Height of 120"  &   Width:  48", 54", 58"                                  M2 / J2
+        {                                       // At Height of 120"  &   Width:  54", 60"                                       M2 / J2 *Reinforced Cold Rolled
         if (width <= 36)      { psfResult = psf_70_70_J1_M1     + "<br/> " + psf_100_115_J2_M3; }
         else if (width <= 42) { psfResult = psf_69d9_69d9_J1_M1 + "<br/> " + psf_100_115_J2_M3; }
         else if (width <= 48) { psfResult = psf_62d1_62d1_J1_M1 + "<br/> " + psf_100_115_J2_M3; }
@@ -162,9 +167,9 @@ var MaxWidthPerPanel = "NOA Maximum Width per Panel at this height is ";
         else if (width <= 60) { psfResult = psf_95d1_95d1_J2_M3 + "<br/> " + psf_100_115_J2_M3_CRS; }
         else if (width > 60)  { psfResult = MaxWidthPerPanel + 60 + "\""; }
       }
-    else if (height <= 126) {         // At Height of 126" &   Width:  30", 36", 42", 48", 54", 55"           M2 / J2
-                                      // At Height of 126" &   Width:  30", 36", 42", 48", 54", 55"           J2 / M3
-                                      // At Height of 126" &   Width:  30", 36", 42", 48", 54", 55"           J2 / M3  *Reinforced Cold Rolled
+    else if (height <= 126) {                   // At Height of 126" &   Width:  30", 36", 42", 48", 54", 55"                   M2 / J2
+                                                // At Height of 126" &   Width:  30", 36", 42", 48", 54", 55"                   J2 / M3
+                                                // At Height of 126" &   Width:  30", 36", 42", 48", 54", 55"                   J2 / M3  *Reinforced Cold Rolled
         if (width <= 42) { psfResult = psf_100_110_J2_M3;}
         else if (width <= 48) {psfResult = psf_100_103d9_J2_M3;
                                psfResult += "<br/> " + psf_100_110_J2_M3_CRS;}
@@ -224,7 +229,7 @@ var MaxWidthPerPanel = "NOA Maximum Width per Panel at this height is ";
     }
     else if (height > 144) {
         psfResult = "Exceeds Max height of 144\" consider using Steel beam or Aluminum Mull for bigger openings.";}
-
+}
 
       ClearFields();
     document.getElementById("PSF_Result").innerHTML = psfResult;
