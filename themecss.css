@@ -84,8 +84,8 @@ form-lbl {
     text-align: left;
     }
 #J1_M1, #J2_M2, #J2_M3_S, #J2_M3_CRS {
-  display: none;
-  padding-right: 30px;
+    display: none; 
+    padding-right: 30px;
 }
 h1 {
     color: white;
