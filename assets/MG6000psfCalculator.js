@@ -21,29 +21,22 @@ document.onkeydown = function (evt) {
         }
 };
 
-
 function CalculatePSF(widthInputValue, heightInputValue, verticalLitesValue, horizontalLitesValue) {
-// Declaration of Variables that will be needed to Determine Pressures
-  var widthInputValue;
-  var heightInputValue;
-  var verticalLitesValue;
-  var horizontalLitesValue;
-//Divide Total Dimensions by number of Lites
-    var width = widthInputValue / verticalLitesValue;
-    var height = heightInputValue / horizontalLitesValue;
-    var psfResult;
-
-    if (widthInputValue == "" || heightInputValue == ""){
-      alert('Please check the Input Fields!')
-      ClearFields();
-      console.log('hello')
-      return;
-      }
 try {
+  // Declaration of Variables that will be needed to Determine Pressures
+  var widthInputValue, heightInputValue, verticalLitesValue, horizontalLitesValue;
+
+  //Divide Total Dimensions by number of Lites
+  // TO USE FUNCTION CalculatePSF DELETE Lines 32-35 removing the Declaration of said values from Specified Get Element by Id Values
   widthInputValue = document.getElementById("widthInput").value;
   heightInputValue = document.getElementById("heightInput").value;
   verticalLitesValue = document.getElementById("vertiLitesInput").value;
   horizontalLitesValue = document.getElementById("horizLitesInput").value;
+
+  var width = widthInputValue / verticalLitesValue;
+  var height = heightInputValue / horizontalLitesValue;
+  var psfResult;
+
 // Declare and Initialize PSF Mull Capacity for FULL VIEW PANELS
     //Variable Declaration Format (PSF_{+positive pressure}_{negative pressure}_{JAMB OPTION}_{MULL OPTION})
     //START OF VERTICAL FULL VIEW PANELS TABLE       Page 3 of 12
@@ -322,7 +315,7 @@ if (horizontalLitesValue > 1) {
     var result = psfResult;
     return result;
 }
-catch (error) {
-  document.getElementById("PSF_Result").innerHTML = "You triggered an error";
+catch (err) {
+  message.innerHTML = "Input " + err;
               }
             }
