@@ -228,8 +228,7 @@ if (horizontalLitesValue == 1) {
     }
     else if (height <= 144)                 // At Height of 144"   &   Width:  30", 36", 42", 48"                     M2 / J2
     {
-        if (width <= 36) { psfResult = psf_100_110_M3_M2;}
-        else if (width <= 36) { psfResult = psf_65_65_J2_M2 + "<br/> " + psf_100_102d8_J2_M3;}
+        if (width <= 36) { psfResult = psf_65_65_J2_M2 + "<br/> " + psf_100_102d8_J2_M3;}
         else if (width <= 42) { psfResult = psf_59d6_59d6_J2_M2 + "<br/> " +  psf_88d9_88d9_J2_M3;}
         else if (width <= 48) { psfResult =  psf_52d7_52d7_J2_M2 + "<br/> " + psf_78d6_78d6_J2_M3;}
         else if (width > 48) { psfResult = MaxWidthPerPanel + 48 + "\""; }
