@@ -21,23 +21,29 @@ document.onkeydown = function (evt) {
         }
 };
 
-function CalculatePSF() {
-try {
-    var widthInputValue = document.getElementById("widthInput").value;
-    var heightInputValue = (document.getElementById("heightInput").value);
-    var verticalLitesValue = (document.getElementById("vertiLitesInput").value);
-    var horizontalLitesValue = (document.getElementById("horizLitesInput").value);
 
+function CalculatePSF(widthInputValue, heightInputValue, verticalLitesValue, horizontalLitesValue) {
+// Declaration of Variables that will be needed to Determine Pressures
+  var widthInputValue;
+  var heightInputValue;
+  var verticalLitesValue;
+  var horizontalLitesValue;
+//Divide Total Dimensions by number of Lites
     var width = widthInputValue / verticalLitesValue;
     var height = heightInputValue / horizontalLitesValue;
     var psfResult;
 
-    if (width == "" || height == ""){
+    if (widthInputValue == "" || heightInputValue == ""){
       alert('Please check the Input Fields!')
       ClearFields();
+      console.log('hello')
       return;
       }
-
+try {
+  widthInputValue = document.getElementById("widthInput").value;
+  heightInputValue = document.getElementById("heightInput").value;
+  verticalLitesValue = document.getElementById("vertiLitesInput").value;
+  horizontalLitesValue = document.getElementById("horizLitesInput").value;
 // Declare and Initialize PSF Mull Capacity for FULL VIEW PANELS
     //Variable Declaration Format (PSF_{+positive pressure}_{negative pressure}_{JAMB OPTION}_{MULL OPTION})
     //START OF VERTICAL FULL VIEW PANELS TABLE       Page 3 of 12
@@ -125,7 +131,7 @@ if (horizontalLitesValue == 1) {
         else if (width <= 72) { psfResult = psf_100_115_J2_M3; }
         else if (width > 72) { psfResult = MaxWidthPerPanel + 72 + "\""; }
       }
-  else if (height <= 96)                         // At Height of 96"   &   Width:  30", 36", 42", 48", 51", 54", 60"                M1 / J1
+    else if (height <= 96)                         // At Height of 96"   &   Width:  30", 36", 42", 48", 51", 54", 60"                M1 / J1
         {                                        // At Height of 120"   &   Width:  30", 36", 42", 48", 51", 54", 60" 66", 72"      J2 / M3
             if (width <= 48) { psfResult = psf_100_110_J1_M1 +         "<br/> " + psf_100_115_J2_M3; }
             else if (width <= 51) { psfResult = psf_100_107d6_J1_M1 +  "<br/> "  + psf_100_115_J2_M3; }
@@ -183,9 +189,9 @@ if (horizontalLitesValue == 1) {
             psfResult += "<br/> " + psf_100_105d9_J2_M3_CRS;
         }
         else if (width > 55) { psfResult = MaxWidthPerPanel + 55 + "\""; }
-}
+      }
       else if (height <= 132)                 // At Height of 132"   &   Width:  30", 36", 42", 48", 53"              M2 / J2
-    {                                         // At Height of 132"   &   Width:  30", 36", 42", 48", 53"              J2 / M3
+        {                                     // At Height of 132"   &   Width:  30", 36", 42", 48", 53"              J2 / M3
                                               // At Height of 132"   &   Width:  42"                                  J2 / M3 *Cold Rolled
         if (width <= 36) { psfResult = psf_100_110_M3_M2; }
         else if (width <= 42) {
@@ -198,7 +204,7 @@ if (horizontalLitesValue == 1) {
         }
         else if (width <= 53) { psfResult = psf_86d2_86d2_J2_M3; }
         else if (width > 53) { psfResult = MaxWidthPerPanel + 53 + "\""; }
-    }
+        }
     else if (height <= 138)                   // At Height of 138"   &   Width:  30", 36", 42", 48", 50"                M2 / J2
     {                                         // At Height of 132"   &   Width:  30", 36", 42", 48", 50"                J2 / M3
                                               // At Height of 132"   &   Width:  42", 48", 50"                          J2 / M3 *Cold Rolled
@@ -299,7 +305,7 @@ if (horizontalLitesValue > 1) {
 
 }
 
-      ClearFields();
+    ClearFields();
     document.getElementById("PSF_Result").innerHTML = psfResult;
 
     if(psfResult.indexOf("J1 / M1") > -1){
@@ -314,6 +320,8 @@ if (horizontalLitesValue > 1) {
     if(psfResult.indexOf("J2 / M3 *Cold Rolled") > -1){
       document.getElementById("J2_M3_CRS").style.display = "inline";
     }
+    var result = psfResult;
+    return result;
 }
 catch (error) {
   document.getElementById("PSF_Result").innerHTML = "You triggered an error";
