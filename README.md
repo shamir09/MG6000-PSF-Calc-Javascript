@@ -1,5 +1,5 @@
 # MG6000-PSF-Calc-Javascript
-<div style="display: block; text-align="center";> <img src="http://shamirajate.com/demo/MrGlass.png" width="650" height="160"></div>
+<div style="display: block; text-align="center";> <img src="http://shamirajate.com/mg6000/assets/MrGlassManufacturing.png" width="650" height="160"></div>
 
  READ ME FILE  |  MG-6000 PRESSURE CALCULATOR
 
@@ -29,4 +29,4 @@
 ###### YUDIEL CURBELO   yudiel@mrglasswindows.com @yudielcurbelo
 ###### DANIEL GONZALEZ  daniel@mrglasswindows.com @daniglezl
 	
-### See it run live:         [Mr.Glass MG-6000 Series Storefront](http://www.shamirajate.com/demo)
+### See it run live:         [Mr.Glass MG-6000 Series Storefront](http://www.shamirajate.com/mg6000/index.html)
