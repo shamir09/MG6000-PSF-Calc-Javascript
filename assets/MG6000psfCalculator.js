@@ -34,7 +34,7 @@ try {
   horizontalLitesValue = document.getElementById("horizLitesInput").value;
 
   var width = widthInputValue / verticalLitesValue;
-  var height = heightInputValue / horizontalLitesValue;
+  var height = heightInputValue;
   var psfResult;
 
 // Declare and Initialize PSF Mull Capacity for FULL VIEW PANELS
@@ -111,6 +111,7 @@ var psf_97_97_J2_M3     = "  +97.0 / -97.0   J2 / M3 *Steel";
 var psf_99_99_J2_M3     = "  +99.0 / -99.0   J2 / M3 *Steel";
 var psf_100_107d5_J2_M3 = " +100.0 /-107.5   J2 / M3 *Steel";
 var psf_100_107d8_J2_M3 = " +100.0 /-107.8   J2 / M3 *Steel";
+var psf_100_109d2_J2_M3 = " +100.0 /-109.2   J2 / M3 *Steel";
 
 // Reinforced Cold Steel with Horizontal Divisions page 4 of 12
 var psf_82d2_82d2_J2_M3_CRS = " +82.2 / -82.2    J2 / M3 *Cold Rolled";
@@ -193,7 +194,7 @@ if (horizontalLitesValue == 1) {
       else if (height <= 132)                 // At Height of 132"   &   Width:  30", 36", 42", 48", 53"              M2 / J2
         {                                     // At Height of 132"   &   Width:  30", 36", 42", 48", 53"              J2 / M3
                                               // At Height of 132"   &   Width:  42"                                  J2 / M3 *Cold Rolled
-        if (width <= 36) { psfResult = psf_100_110_M3_M2; }
+        if (width <= 36) { psfResult = psf_100_110_J2_M3; }
         else if (width <= 42) {
             psfResult = psf_100_106d6_J2_M3_CRS;
             psfResult += "<br/> " + psf_100_110_J2_M3;
@@ -208,7 +209,7 @@ if (horizontalLitesValue == 1) {
     else if (height <= 138)                   // At Height of 138"   &   Width:  30", 36", 42", 48", 50"                M2 / J2
     {                                         // At Height of 132"   &   Width:  30", 36", 42", 48", 50"                J2 / M3
                                               // At Height of 132"   &   Width:  42", 48", 50"                          J2 / M3 *Cold Rolled
-        if (width <= 36) { psfResult = psf_100_110_M3_M2; }
+        if (width <= 36) { psfResult = psf_100_110_J2_M3; }
         else if (width <= 42) {
             psfResult = psf_65_65_J2_M2;
             psfResult += "<br/> " + psf_97d3_97d3_J2_M3;
@@ -238,65 +239,70 @@ if (horizontalLitesValue == 1) {
 }
 
 //Check for Horizontal Divisions - If > 1 Use HORIZONTAL DIVISIONS TABLE BECAUSE THERE ARE LITES STACKED
-if (horizontalLitesValue > 1) {
-    if (height <= 90) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
+if (horizontalLitesValue >= 2) {
+     if (height <= 90) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
         if (width <= 48) { psfResult = psf_100_110_J1_M1; }
         else if (width <= 54) { psfResult = psf_100_106_J1_M1; }
         else if (width <= 55) { psfResult = psf_100_104d1_J1_M1; }
         else if (width <= 60) { psfResult = psf_70_70_J1_M1; }
         else if (width > 60) { psfResult = MaxWidthPerPanel + 60 + "\""; }
       }
-      if (height <= 96) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
+     else if (height <= 96) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
           if (width <= 42) { psfResult = psf_100_110_J1_M1 + "<br/>" + psf_100_115_J2_M3; }
           else if (width <= 48) { psfResult = psf_100_103d8_J1_M1  + "<br/>" + psf_100_115_J2_M3; }
           else if (width <= 51) { psfResult = psf_97d7_97d7_J1_M1 + "<br/>" + psf_100_115_J2_M3; }
           else if (width <= 60) { psfResult = psf_70_70_J1_M1  + "<br/>" + psf_100_115_J2_M3; }
           else if (width > 60) { psfResult = MaxWidthPerPanel + 60 + "\""; }
         }
-        if (height <= 102) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
+      else if (height <= 102) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
             if (width <= 36) { psfResult = psf_100_110_J1_M1 + "<br/>" + psf_100_115_J2_M3; }
             else if (width <= 42) { psfResult = psf_100_105d1_J1_M1 + "<br/>" + psf_100_115_J2_M3; }
             else if (width <= 48) { psfResult = psf_92_92_J1_M1 + "<br/>" + psf_100_115_J2_M3; }
-            else if (width <= 57) { psfResult = psf_70_70_J1_M1;}
+            else if (width <= 57) { psfResult = psf_70_70_J1_M1 + "<br/>" + psf_100_115_J2_M3; }
             else if (width <= 60) { psfResult = psf_100_115_J2_M3; }
             else if (width > 60) { psfResult = MaxWidthPerPanel + 60 + "\""; }
           }
-        if (height <= 108) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
+      else if (height <= 108) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
               if (width <= 54) { psfResult = psf_70_70_J1_M1 + "<br/>" + psf_100_115_J2_M3; }
-              else if (width <= 60) { psfResult = psf_100_107d8_J2_M3; }
+              else if (width <= 60) { psfResult = psf_100_107d8_J2_M3;}
               else if (width > 60) { psfResult = MaxWidthPerPanel + 54 + "\""; }
             }
-        if (height <= 114) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
+      else if (height <= 114) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
                 if (width <= 42) { psfResult = psf_70_70_J1_M1  + "<br/>" + psf_100_115_J2_M3; }
                 else if (width <= 48) { psfResult = psf_68d1_68d1_J1_M1  + "<br/>" + psf_100_115_J2_M3; }
                 else if (width <= 51) { psfResult = psf_64d1_64d1_J1_M1  + "<br/>" + psf_100_107d5_J2_M3  + "<br/>" + psf_100_115_J2_M3; }
-                else if (width <= 54) {psf_100_107d5_J2_M3  + "<br/>" + psf_100_115_J2_M3; }
+                else if (width <= 54) {psf_100_107d5_J2_M3  + "<br/>" + psf_100_115_J2_M3_CRS; }
                 else if (width <= 60) {psf_96d8_96d8_J2_M3  + "<br/>" + psf_100_115_J2_M3_CRS; }
                 else if (width > 60) { psfResult = MaxWidthPerPanel + 60 + "\""; }
               }
-        if (height <= 120) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
+      else if (height <= 120) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
                 if (width <= 36) { psfResult = psf_70_70_J1_M1; }
-                else if (width <= 42) { psfResult = psf_66d7_66d7_J1_M1; }
-                else if (width <= 48) { psfResult = psf_58d4_58d4_J1_M1 + "<br/> " + psf_65_65_J2_M2; }
+                else if (width <= 42) { psfResult = psf_66d7_66d7_J1_M1 + "<br/>" + psf_100_115_J2_M3; }
+                else if (width <= 48) { psfResult = psf_58d4_58d4_J1_M1 + "<br/> " + psf_65_65_J2_M2 + "<br/>" + psf_100_109d2_J2_M3 + "<br/>" + psf_100_115_J2_M3_CRS ; }
+                else if (width <= 54) { psfResult = psf_97_97_J2_M3 + "<br/>" + psf_100_115_J2_M3_CRS; }
                 else if (width <= 58) { psfResult = psf_65_65_J2_M2; }
-                else if (width > 58) { psfResult = MaxWidthPerPanel + 58 + "\""; }
+                else if (width <= 60) { psfResult = psf_87d3_87d3_J2_M3 + "<br/>" + psf_100_104d2_J2_M3_CRS; }
+                else if (width > 60) { psfResult = MaxWidthPerPanel + 60 + "\""; }
               }
-        if (height <= 126) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
-                if (width <= 55) { psfResult = psf_65_65_J2_M2; }
+      else if (height <= 126) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
+                if (width <= 42) { psfResult = psf_100_110_J2_M3; }
+                else if (width <= 48) { psfResult = psf_99_99_J2_M3  + "<br/>" + psf_100_110_J2_M3_CRS; }
+                else if (width <= 54) { psfResult = psf_88_88_J2_M3  + "<br/>" + psf_100_100_J2_M3_CRS; }
+                else if (width <= 55) { psfResult = psf_65_65_J2_M2; }
                 else if (width > 55) { psfResult = MaxWidthPerPanel + 55 + "\""; }
               }
-        if (height <= 132) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
+      else if (height <= 132) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
                 if (width <= 48) { psfResult = psf_65_65_J2_M2; }
                 else if(width <= 53) { psfResult = psf_59d4_59d4_J2_M2; }
                 else if (width > 53) { psfResult = MaxWidthPerPanel + 53 + "\""; }
               }
-        if (height <= 138) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
+      else if (height <= 138) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
                 if (width <= 42) { psfResult = psf_65_65_J2_M2; }
                 else if (width <= 48) { psfResult = psf_57d4_57d4_J2_M2; }
                 else if (width <= 50) { psfResult = psf_55d1_55d1_J2_M2 + "<br/> " + psf_82d2_82d2_J2_M3_CRS; }
                 else if (width > 50) { psfResult = MaxWidthPerPanel + 50 + "\""; }
               }
-        if (height <= 144) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
+      else if (height <= 144) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
                 if (width <= 36) { psfResult = psf_65_65_J2_M2; }
                 else if (width <= 42) { psfResult = psf_57d7_57d7_J2_M2; }
                 else if (width <= 48) { psfResult = psf_50d5_50d5_J2_M2; }
