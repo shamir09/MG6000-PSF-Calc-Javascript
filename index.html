@@ -43,40 +43,40 @@
     </a><br/>
     <!--                  FORM                     -->
     <h1 class="title" id="headTitle">MG-6000<br/> PSF Calculator</h1>
-    <a href="assets/FL18411_R0_II_SS - MG 6000 ALUM WINDOW WALL SYSTEM (LMI) W15-71.pdf" target="_blank" id="FL_Product" class="hover">
-        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> FL-18411</a><br/>
+    <a href="https://www.floridabuilding.org/upload/PR_Instl_Docs/FL18411_R1_II_SS%20-%20MG%206000%20WW%20(LMI)%20DWG%2015-71.pdf" target="_blank" id="FL_Product" class="hover">
+        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> FL #18411.1</a><br/>
 
         <form name="MG-6000" method="post" action="psfcalc()" id="contForm">
                <div class="form-group" id="form-box">
 
                     Width :
-                    <input type="number" class="form-control" name="widthInput" maxlength="6" id="widthInput" autofocus required>
+                    <input type="number" class="form-control" name="widthInput" maxlength="6" id="widthInput" autofocus required autocomplete="off">
                     <span class="glyphicon glyphicon-resize-horizontal" id="widthInputIcon"></span><br />
 
                     Height:
-                    <input type="number" class="form-control" name="heightInput" maxlength="6" id="heightInput" required>
+                    <input type="number" class="form-control" name="heightInput" maxlength="6" id="heightInput" required autocomplete="off">
                     <span class="glyphicon glyphicon-resize-vertical" id="heighInputIcon"></span><br />
 
                     VLites:
-                    <input type="number" class="form-control" name="vertiLitesInput" maxlength="3" id="vertiLitesInput" value="1" required>
+                    <input type="number" class="form-control" name="vertiLitesInput" maxlength="3" id="vertiLitesInput" value="1" required autocomplete="off">
                       <span class="glyphicon glyphicon-pause" id="verticalLitesIcon"></span><br />
 
                     HLites:
-                    <input type="number" class="form-control" name="horizLitesInput" maxlength="3" id="horizLitesInput" value="1" required>
+                    <input type="number" class="form-control" name="horizLitesInput" maxlength="3" id="horizLitesInput" value="1" required autocomplete="off">
                     <span class="glyphicon glyphicon-menu-hamburger" id="horizontalLitesIcon"></span><br /><br />
 
                     <input type="button" value="Calculate" class="contactmeboxes" id="calculate_btn" onclick="CalculatePSF()">
-                    <input type="reset" value="Reset" class="contactmeboxes" id="reset_btn" onclick="ClearFields()">
+                    <input type="reset" value="Reset" class="contactmeboxes" id="reset_btn" onclick="ResetFields()">
 
                     <div id="PSF_Result"></div>
                 </div>
 </form>
 
 <div style="display: block;">
-<img src="assets/J1_M1.jpg" id="J1_M1" alt="J1_M1 No Reinforcement">
-<img src="assets/J2_M2.jpg" id="J2_M2" alt="J2_M2 Alum Reinforcement">
-<img src="assets/J2_M3_S.jpg" id="J2_M3_S" alt="J1_M1 Steel Reinforcement">
-<img src="assets/J2_M3_CRS.jpg" id="J2_M3_CRS" alt="J1_M1 Steel Reinforcement">
+    <img src="assets/M1.jpg" id="M1" alt="J1_M1 No Reinforcement">
+    <img src="assets/M2.jpg" id="M2" alt="J2_M2 Alum Reinforcement">
+    <img src="assets/M3_S.jpg" id="M3_S" alt="J1_M1 Steel Reinforcement">
+    <img src="assets/M3_CRS.jpg" id="M3_CRS" alt="J1_M1 Steel Reinforcement">
 </div>
 
   <!--  <script>
