@@ -317,9 +317,6 @@ if (horizontalLitesValue >= 2) {
                 else if (width > 48) { psfResult = MaxWidthPerPanel + 48 + "\""; }
               }
 
-
-
-
 }
 
     ResetFields();
@@ -338,6 +335,7 @@ if (horizontalLitesValue >= 2) {
       document.getElementById("M3_CRS").style.display = "inline";
     }
     var result = psfResult;
+    document.getElementById("widthInput").focus();
     return result;
 }
 catch (err) {
