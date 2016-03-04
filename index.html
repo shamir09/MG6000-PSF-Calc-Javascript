@@ -24,6 +24,25 @@
 
     <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+    <script src="js/jquery-2.2.0.js"></script>
+    <script src="js/raphael.js"></script>
+    <script src="js/svg-pan-zoom.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <style type="text/css">
+        #container
+        {
+            border: 1px dashed black;
+            padding: 10px;
+        }
+        .canvas {
+            width: 500px;
+            height: 500px;
+        }
+      </style>
 </head>
 <body>  <!-- MainPage -->
 <!--
@@ -37,7 +56,8 @@
   (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 -->
-  <br/>
+<div id="bodyContainer">
+  <div id="formContainer">
     <a href="http://www.mrglasswindows.com/" alt="Mr. Glass Windows and Doors Official Website">
         <img src="assets/MrGlassManufacturing.png" id="mrglasslogo" width="250" height="200px" alt="Mr Glass doors & Windows Logo" />
     </a><br/>
@@ -70,15 +90,40 @@
 
                     <div id="PSF_Result"></div>
                 </div>
-</form>
+              </form>
 
-<div style="display: block;">
-    <img src="assets/M1.jpg" id="M1" alt="J1_M1 No Reinforcement">
-    <img src="assets/M2.jpg" id="M2" alt="J2_M2 Alum Reinforcement">
-    <img src="assets/M3_S.jpg" id="M3_S" alt="J1_M1 Steel Reinforcement">
-    <img src="assets/M3_CRS.jpg" id="M3_CRS" alt="J1_M1 Steel Reinforcement">
+      <div style="display: inline-block;">
+          <img src="assets/M1.jpg" id="M1" alt="J1_M1 No Reinforcement">
+          <img src="assets/M2.jpg" id="M2" alt="J2_M2 Alum Reinforcement">
+          <img src="assets/M3_S.jpg" id="M3_S" alt="J1_M1 Steel Reinforcement">
+          <img src="assets/M3_CRS.jpg" id="M3_CRS" alt="J1_M1 Steel Reinforcement">
+      </div>
+    </div>
+
+    <div id="drawingContainer">
+    <div id="canvas" class="canvas"></div>
+    </div>
 </div>
+<script>
+    $(function() {
+        var panZoom = svgPanZoom('#mySVG', {
+            zoomEnabled: true,
+            controlIconsEnabled: true,
+            enableMouseWheelZoom : true,
+            zoom: 0.2,
+            maxZoom: 3,
+            minZoom: 0.5,
+            fit: 1,
+            center: 1
+        });
 
+        $(window).resize(function(){
+            panZoom.resize();
+            panZoom.fit();
+            panZoom.center();
+       })
+    });
+</script>
   <!--  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

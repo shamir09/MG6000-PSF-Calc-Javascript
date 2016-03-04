@@ -321,18 +321,19 @@ if (horizontalLitesValue >= 2) {
 
     ResetFields();
     document.getElementById("PSF_Result").innerHTML = psfResult;
-
+if (verticalLitesValue > 1) {
     if(psfResult.indexOf("M1") > -1){
       document.getElementById("M1").style.display = "inline";
-    }
+      }
     if(psfResult.indexOf("M2") > -1){
       document.getElementById("M2").style.display = "inline";
-    }
+      }
     if(psfResult.indexOf("M3 *Steel") > -1){
       document.getElementById("M3_S").style.display = "inline";
-    }
+      }
     if(psfResult.indexOf("M3 *Cold Rolled") > -1){
       document.getElementById("M3_CRS").style.display = "inline";
+      }
     }
     var result = psfResult;
     document.getElementById("widthInput").focus();
