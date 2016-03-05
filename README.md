@@ -10,8 +10,10 @@
 	Glass with both PVB & SGP options and can resist Wind Loads of -100.0 / +115.0 PSF.
 
 ##### INPUT - the program uses two variables to calculate Windload.
-		 *Width    (format accepted: inches ")
-		 *Height   (format accepted: inches ")
+		 *Width            (format accepted: inches ")
+		 *Height           (format accepted: inches ")
+		 *Vertical Lites   (format accepted: integer)
+		 *Horizontal Lites (format accepted: integer)
 			 Under Development:
 				 Glass Interlayer Composition (PVB or SGP)
 				 Screw Options and corresponding pressures
