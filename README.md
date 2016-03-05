@@ -13,15 +13,13 @@
 		 *Width    (format accepted: inches ")
 		 *Height   (format accepted: inches ")
 			 Under Development:
-				 Insertion of vertical & horizontal divisions/lites to calculate Windload
 				 Glass Interlayer Composition (PVB or SGP)
 				 Screw Options and corresponding pressures
 				 Drawing a Sketch of the system entered
 
 ### DISCLAIMER    |
 
-	 This program should not be used as the only resource to check for Windload Calculation.
-
+	 This program should not be used as the only resource to check for Windload Calculation. 
 
 ### CONTACT US    |     DEVELOPERS
 
