@@ -86,7 +86,9 @@ form-lbl {
 #M1, #M2, #M3_S, #M3_CRS {
     display: none;
     padding-right: 10px;
-}
+    width: 200px;
+    height: 200px;
+    }
 h1 {
     color: white;
     font-family: 'Trebuchet MS';
@@ -110,5 +112,8 @@ h1 {
   top: 0px;
   width:40%;
   height:inherit;
-
 }
+.dropdown, .container{
+  text-align: left;
+  display: inline-block;
+  }

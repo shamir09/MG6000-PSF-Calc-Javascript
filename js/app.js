@@ -1,4 +1,3 @@
-// not in use
 
 // data
 var storefrontWindow1 = {
