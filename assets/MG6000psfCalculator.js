@@ -1,8 +1,9 @@
 // JavaScript source code
 
 function ResetFields() {
-    var psfResult = "";
-    document.getElementById("PSF_Result").innerHTML = psfResult;
+    var psfResult = "+ / -";
+    document.getElementById("PSF_Result_Div").innerHTML = psfResult;
+    document.getElementById("J1").style.display = "none";
     document.getElementById("M1").style.display = "none";
     document.getElementById("M2").style.display = "none";
     document.getElementById("M3_S").style.display = "none";
@@ -23,8 +24,6 @@ document.onkeydown = function (evt) {
 
 function CalculatePSF(widthInputValue, heightInputValue, verticalLitesValue, horizontalLitesValue) {
 
-
-
   // Declaration of Variables that will be needed to Determine Pressures
   var widthInputValue, heightInputValue, verticalLitesValue, horizontalLitesValue;
 
@@ -35,6 +34,8 @@ function CalculatePSF(widthInputValue, heightInputValue, verticalLitesValue, hor
   verticalLitesValue = document.getElementById("vertiLitesInput").value;
   horizontalLitesValue = document.getElementById("horizLitesInput").value;
 
+if (widthInputValue == undefined || widthInputValue == "") {alert("Please enter a Width"); return}
+if (heightInputValue == undefined || heightInputValue == "") {alert("Please enter a height"); return}
 
   var width = widthInputValue / verticalLitesValue;
   var height = heightInputValue;
@@ -43,13 +44,13 @@ function CalculatePSF(widthInputValue, heightInputValue, verticalLitesValue, hor
 // Declare and Initialize PSF Mull Capacity for FULL VIEW PANELS
     //Variable Declaration Format (PSF_{+positive pressure}_{negative pressure}_{JAMB OPTION}_{MULL OPTION})
     //START OF VERTICAL FULL VIEW PANELS TABLE       Page 3 of 12
-var psf_62d1_62d1_M1 = "   +62.1 /  -62.1    M1";
-var psf_69d4_69d4_M1 = "   +69.4 /  -69.4    M1";
-var psf_69d9_69d9_M1 = "   +69.9 /  -69.9    M1";
-var psf_70_70_M1     = "   +70.0 /  -70.0    M1";
-var psf_98d2_98d2_M1 = "   +98.2 /  -98.2    M1";
-var psf_100_107d6_M1 = "  +100.0 / -107.6    M1";
-var psf_100_110_M1   = "  +100.0 / -110.0    M1";
+var psf_62d1_62d1_M1 = "   +62.1 /  -62.1";                 //M1
+var psf_69d4_69d4_M1 = "   +69.4 /  -69.4";
+var psf_69d9_69d9_M1 = "   +69.9 /  -69.9";
+var psf_70_70_M1     = "   +70.0 /  -70.0";                 //Page 3 of 12
+var psf_98d2_98d2_M1 = "   +98.2 /  -98.2";
+var psf_100_107d6_M1 = "  +100.0 / -107.6";
+var psf_100_110_M1   = "  +100.0 / -110.0";                 //M1
 
 var psf_52d7_52d7_J2_M2 = "   +52.7 /  -52.7    M2 *Aluminum";
 var psf_58_58_J2_M2     = "   +58.0 /  -58.0    M2 *Aluminum";
@@ -85,16 +86,16 @@ var psf_100_115_J2_M3_CRS   = " +100.0 / -115.0    M3 *Cold Rolled";
 // END OF FULL VIEW PANELS TABLE
 
 //START OF HORIZONTAL DIVISIONS TABLE   PAGE - 4 of 12
-var psf_58d4_58d4_M1 ="  +58.4 / -58.4     M1";
-var psf_64d1_64d1_M1 ="  +64.1 / -64.1     M1";
-var psf_66d7_66d7_M1 ="  +66.7 / -66.7     M1";
-var psf_68d1_68d1_M1 ="  +68.1 / -68.1     M1";
-var psf_92_92_M1     ="  +92.0 / -92.0     M1";
-var psf_97d7_97d7_M1 ="  +97.7 / -97.7     M1";
-var psf_100_103d8_M1 =" +100.0 / -103.8    M1";
-var psf_100_104d1_M1 =" +100.0 / -104.1    M1";
-var psf_100_105d1_M1 =" +100.0 / -105.1    M1";
-var psf_100_106_M1   =" +100.0 / -106.0    M1";
+var psf_58d4_58d4_M1 ="  +58.4 / -58.4 ";
+var psf_64d1_64d1_M1 ="  +64.1 / -64.1 ";
+var psf_66d7_66d7_M1 ="  +66.7 / -66.7 ";
+var psf_68d1_68d1_M1 ="  +68.1 / -68.1 ";
+var psf_92_92_M1     ="  +92.0 / -92.0 ";
+var psf_97d7_97d7_M1 ="  +97.7 / -97.7 ";
+var psf_100_103d8_M1 =" +100.0 / -103.8";
+var psf_100_104d1_M1 =" +100.0 / -104.1";
+var psf_100_105d1_M1 =" +100.0 / -105.1";
+var psf_100_106_M1   =" +100.0 / -106.0";
 
 var psf_50d5_50d5_J2_M2 = " +50.5 / -50.5     M2 *Aluminum";
 var psf_55d1_55d1_J2_M2 = " +55.1 / -55.1     M2 *Aluminum";
@@ -319,27 +320,30 @@ if (horizontalLitesValue >= 2) {
                 else if (width <= 48) { psfResult = psf_50d5_50d5_J2_M2 + "<br/> " + psf_75d4_75d4_J2_M3; }
                 else if (width > 48) { psfResult = MaxWidthPerPanel + 48 + "\""; }
               }
-  
+
 
 }
 
     ResetFields();
-    document.getElementById("PSF_Result").innerHTML = psfResult;
-if (verticalLitesValue > 1) {
-    if(psfResult.indexOf("M1") > -1){
-      document.getElementById("M1").style.display = "inline";
+    document.getElementById("PSF_Result_Div").innerHTML = psfResult;          //Store Result Result Div
+
+if (verticalLitesValue == 1) {document.getElementById("J1").style.display = "inline";}
+
+  if (verticalLitesValue > 1) {
+  //    if(psfResult.indexOf("M1") > -1){
+    //    document.getElementById("M1").style.display = "inline";
+      //   }
+      if(psfResult.indexOf("M2") > -1){
+        document.getElementById("M2").style.display = "inline";
+        }
+      if(psfResult.indexOf("M3 *Steel") > -1){
+        document.getElementById("M3_S").style.display = "inline";
+        }
+      if(psfResult.indexOf("M3 *Cold Rolled") > -1){
+        document.getElementById("M3_CRS").style.display = "inline";
+        }
       }
-    if(psfResult.indexOf("M2") > -1){
-      document.getElementById("M2").style.display = "inline";
-      }
-    if(psfResult.indexOf("M3 *Steel") > -1){
-      document.getElementById("M3_S").style.display = "inline";
-      }
-    if(psfResult.indexOf("M3 *Cold Rolled") > -1){
-      document.getElementById("M3_CRS").style.display = "inline";
-      }
-    }
     var result = psfResult;
-    document.getElementById("widthInput").focus();
+    //document.getElementById("widthInput").focus();
     return result;
   }

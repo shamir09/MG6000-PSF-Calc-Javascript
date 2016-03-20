@@ -7,7 +7,7 @@ a:link {
 a:visited {
     color: steelblue;
     text-decoration: none;
-}
+} 
 
 a:hover {
     color: red;
@@ -88,7 +88,7 @@ form-lbl {
     width:600px;
     text-align: left;
     }
-#M1, #M2, #M3_S, #M3_CRS {
+#J1, #M1, #M2, #M3_S, #M3_CRS {
     display: none;
     padding-right: 10px;
     width: 200px;
