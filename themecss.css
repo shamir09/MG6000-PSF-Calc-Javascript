@@ -103,6 +103,7 @@ h1 {
   display:inline-block;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   }
 #drawingContainer {
   display:inline-block;
@@ -117,3 +118,12 @@ h1 {
   text-align: left;
   display: inline-block;
   }
+.PSF_Result_Div {
+  background: #48B748;
+  border-radius: 20px;
+  color: white;
+  padding: 10px;
+  width: 130px;
+  margin-left: auto;
+  margin-right: auto;
+}
