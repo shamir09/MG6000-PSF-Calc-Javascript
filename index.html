@@ -83,10 +83,20 @@
 
                     HLites:
                     <input type="number" class="form-control" name="horizLitesInput" maxlength="3" id="horizLitesInput" value="1" required autocomplete="off">
-                    <span class="glyphicon glyphicon-menu-hamburger" id="horizontalLitesIcon"></span><br /><br />
+                    <span class="glyphicon glyphicon-menu-hamburger" id="horizontalLitesIcon"></span>
 
-                    <input type="button" value="Calculate" class="contactmeboxes" id="calculate_btn" onclick="CalculatePSF()">
-                    <input type="reset" value="Reset" class="contactmeboxes" id="reset_btn" onclick="ResetFields()">
+                    Reinf: <select name="Reinforcement" id="Reinforcement">
+                            <option value="0">None</option>
+                            <option value="1">Aluminum</option>
+                            <option value="2">Aluminum Steel</option>
+                            <option value="3">Aluminum Cold Steel</option>
+                          </select>
+                          <span class="glyphicon glyphicon-link" id="reinforcementIcon"></span>
+                          
+            <input type="button" value="Calculate" class="contactmeboxes" id="calculate_btn" onclick="CalculatePSF()">
+            <input type="reset" value="Reset" class="contactmeboxes" id="reset_btn" onclick="ResetFields()">
+
+
 
                     <div id="PSF_Result"></div>
                 </div>

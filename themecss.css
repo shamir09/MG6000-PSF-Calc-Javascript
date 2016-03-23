@@ -44,14 +44,19 @@ form-lbl {
     display: inline-block;
     color: darkgray;
 }
-#widthInput, #heightInput, #horizLitesInput, #vertiLitesInput {
+#widthInput, #heightInput, #horizLitesInput, #vertiLitesInput, select{
     display:inline-block;
     padding: 2px;
     width:150px;
     opacity:.9;
     margin-top: 5px;
     }
-
+#Reinforcement {
+      margin-left: 10px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      border-radius: 4px;
+}
 #calculate_btn {
         width: 300px;
         margin-top: 10px;
