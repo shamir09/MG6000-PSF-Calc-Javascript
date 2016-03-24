@@ -14,6 +14,7 @@ Glass with both PVB & SGP options and can widthstand Wind Loads of -100.0 / +115
 		 *Height           (format accepted: inches ")
 		 *Vertical Lites   (format accepted: integer)
 		 *Horizontal Lites (format accepted: integer)
+		 *Reinfocerment type(None, Aluminum, Steel, Cold Rolled Steel.
 			 Features Under Development:
 				 Glass Interlayer Composition (PVB or SGP)
 				 Screw Options and corresponding pressures
@@ -21,7 +22,8 @@ Glass with both PVB & SGP options and can widthstand Wind Loads of -100.0 / +115
 
 ### DISCLAIMER    |
 
-	 This program should not be used as the only resource to check for Windload Calculation compliance. This tool is still under development and is actively being contributed to.
+	 This program should not be used as the only resource to check for Windload Calculation compliance.
+	 This tool is still under development and is actively being contributed to.
 
 ### CONTACT US    |     DEVELOPERS
 Have a question or feature you'd recommend? Tell us.
