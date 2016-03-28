@@ -39,7 +39,7 @@ if (heightInputValue == undefined || heightInputValue == "") {alert("Please ente
 
   var width = widthInputValue / verticalLitesValue;
   var height = heightInputValue;
-  var psfResult;
+  var psf_M1, psf_M2, psf_M3, psf_M3_CRS;
 
 // Declare and Initialize PSF Mull Capacity for FULL VIEW PANELS
     //Variable Declaration Format (PSF_{+positive pressure}_{negative pressure}_{JAMB OPTION}_{MULL OPTION})
@@ -320,7 +320,6 @@ if (horizontalLitesValue >= 2) {
                 else if (width <= 48) { psfResult = psf_50d5_50d5_J2_M2 + "<br/> " + psf_75d4_75d4_J2_M3; }
                 else if (width > 48) { psfResult = MaxWidthPerPanel + 48 + "\""; }
               }
-
 
 }
 
