@@ -49,23 +49,23 @@ if (reinforcementSelected == 0)  {
     // FULL VIEW PANELS
     var psf_100_110_M1     = "  +100.0 / -110.0";
     var psf_70_70_M1       = "   +70.0 /  -70.0";
-    var psf_100_107d6_M1 = "  +100.0 / -107.6";
-    var psf_98d2_98d2_M1 = "   +98.2 /  -98.2";
-    var psf_69d4_69d4_M1 = "   +69.4 /  -69.4";
-    var psf_69d9_69d9_M1 = "   +69.9 /  -69.9";
-    var psf_62d1_62d1_M1 = "   +62.1 /  -62.1";
+    var psf_100_107d6_M1   = "  +100.0 / -107.6";
+    var psf_98d2_98d2_M1   = "   +98.2 /  -98.2";
+    var psf_69d4_69d4_M1   = "   +69.4 /  -69.4";
+    var psf_69d9_69d9_M1   = "   +69.9 /  -69.9";
+    var psf_62d1_62d1_M1   = "   +62.1 /  -62.1";
 
     // HORIZONTAL DIVISION  PANELS == FIRST TABLE in Page 4 of 12
     var psf_100_106d0_M1   = "  +100.0 / -106.0";
     var psf_100_104d1_M1   = "  +100.0 / -104.1";
-    var psf_100_103d8_M1 = " +100.0 / -103.8";
-    var psf_97d7_97d7_M1 = "  +97.7 / -97.7 ";
-    var psf_100_105d1_M1 =" +100.0 / -105.1";
-    var psf_92d0_92d0_M1 ="  +92.0 / -92.0";
-    var psf_68d1_68d1_M1 ="  +68.1 / -68.1";
-    var psf_64d1_64d1_M1 ="  +64.1 / -64.1";
-    var psf_66d7_66d7_M1 ="  +66.7 / -66.7";
-    var psf_58d4_58d4_M1 ="  +58.4 / -58.4";
+    var psf_100_103d8_M1   = " +100.0 / -103.8";
+    var psf_97d7_97d7_M1   = "  +97.7 / -97.7 ";
+    var psf_100_105d1_M1   = " +100.0 / -105.1";
+    var psf_92d0_92d0_M1   = "  +92.0 / -92.0";
+    var psf_68d1_68d1_M1   = "  +68.1 / -68.1";
+    var psf_64d1_64d1_M1   = "  +64.1 / -64.1";
+    var psf_66d7_66d7_M1   = "  +66.7 / -66.7";
+    var psf_58d4_58d4_M1   = "  +58.4 / -58.4";
 
     if (horizontalLitesValue == 1) {
         if (height <= 90) {
@@ -102,10 +102,43 @@ if (reinforcementSelected == 1)  {
     var psf_50d5_50d5_M2 = " +50.5 / -50.5";
     }
 
+//  M3 (STEEL REINFORCMENT)  == THIRD Table in Page 3 of 12.   -line breaks indicate new table
 if (reinforcementSelected == 2)  {   // If Reinforcement M3 is selected then Use the THIRD Table in Page 3 of 12.
     // FULL VIEW PANELS
-    var psf_100_145_M3   = "  +100.0 / -145.0";
-    var psf_100_115_M3   = "  +100.0 / -115.0";
+    var psf_100_145_M3    = "  +100.0 / -145.0";
+    var psf_100_115_M3    = "  +100.0 / -115.0";
+    var psf_100_144_M3    = "  +100.0 / -144.0";
+    var psf_100_115_M3    = "  +100.0 / -115.0";
+    var psf_100_111d7_M3  = "  +100.0 / -111.7";
+    var psf_100_110d5_M3  = "  +100.0 / -110.5";
+    var psf_100_144d6_M3  = "  +100.0 / -144.6";
+    var psf_100_128d3_M3  = "  +100.0 / -128.3";
+    var psf_100_106d4_M3  = "  +100.0 / -106.4";
+    var psf_100_102d4_M3  = "  +100.0 / -144.6";
+    var psf_100_129d9_M3  = "  +100.0 / -129.9";
+    var psf_100_115d1_M3  = "  +100.0 / -115.1";
+    var psf_100_103d9_M3  = "  +100.0 / -103.9";
+    var psf_95d1_95d1_M3  = "  +95.1 / -95.1";
+    var psf_93d6_93d6_M3  = "  +93.6 / -93.6";
+    var psf_92d1_92d1_M3  = "  +92.1 / -92.1";
+    var psf_100_106d6_M3  = "  +100.0 / -106.6";
+    var psf_94d3_94d3_M3  = "  +94.3 / -94.3";
+    var psf_86d2_86d2_M3  = "  +86.2 / -86.2";
+    var psf_100_112d6_M3  = "  +100.0 / -112.6";
+    var psf_112d6_112d6_M3= "  +112.6/ -112.6";
+    var psf_97d3_97d3_M3  = "  +97.3 / -97.3";
+    var psf_82d8_82d8_M3  = "  +82.8 / -82.8";
+    var psf_100_102d8_M3  = "  +100.0 / -102.8";
+
+
+
+
+
+
+
+
+
+
 }
 
 /*
