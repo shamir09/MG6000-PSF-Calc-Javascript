@@ -1,5 +1,5 @@
 # MG6000-PSF-Calc-Javascript
-<div style="display: block; text-align="center";> <img src="http://shamirajate.com/mg6000/assets/MrGlassManufacturing.png" width="200" height="160"></div>
+<div style="display: block; text-align="center";> <img src="http://shamirajate.com/mg6000/assets/MrGlassManufacturing.png" width="160" height="128"></div>
 
  READ ME FILE  |  MG-6000 PRESSURE CALCULATOR
 
