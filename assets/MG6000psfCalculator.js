@@ -1,5 +1,4 @@
 // JavaScript source code
-
 function ResetFields() {
     var psfResult = "+ / -";
     document.getElementById("PSF_Result_Div").innerHTML = psfResult;
@@ -73,6 +72,50 @@ if (reinforcementSelected == 0)  {
             else if (width <= 60) { psf_M1 = psf_70_70_M1; }
             else if (width > 60) { psf_M1 = MaxExceeded + 60 + '\"'; }
           }
+        else if (height <= 96)                         // At Height of 96"   &   Width:  30", 36", 42", 48", 51", 54", 60"                M1 / J1
+          {                                        // At Height of 120"   &   Width:  30", 36", 42", 48", 51", 54", 60" 66", 72"      J1 / M3
+              if (width <= 48) { psf_M1 = psf_100_110_M1; }
+              else if (width <= 51) { psf_M1 = psf_100_107d6_M1; }
+              else if (width <= 60) { psf_M1 = psf_70_70_M1; }
+              else if (width > 60) { psf_M1 = MaxExceeded + 60 + '\"'; }
+            }
+      else if (height <= 102)                      // At Height of 102"  &   Width:  30", 36", 42", 48", 54", 57"                       M1 / J1
+          {                                        // &   Width:  30", 36", 42", 48", 54", 60" 66", 71"    J1 / M3
+          if (width <= 42) { psf_M1 = psf_100_110_M1; }
+          else if (width <= 48) { psf_M1 = psf_98d2_98d2_M1; }
+          else if (width <= 57) { psf_M1 = psf_70_70_M1; }
+          else if (width > 57)  { MaxExceeded = MaxWidthPerPanel + 57 + "\""; }
+        }
+      else if (height <= 108)                      // At Height of 108"   &   Width:  30", 36", 42", 48", 54"                          M1 / J1
+      {                                            // At Height of 108"   &   Width:  30", 36", 42", 48", 54" 60" 66" 67"              J1 / M3
+          if      (width <= 54) { psf_M1 = psf_70_70_M1;}
+          else if (width > 54)  { MaxExceeded = MaxWidthPerPanel + 54 + "\""; }
+      }
+      else if (height <= 114)                      // At Height of 114"   &   Width:  30", 36", 42", 48", 51"                         M1 / J1
+      {                                            // &   Width:  30", 36", 42", 48", 54" 60" 63"                                     J1 / M3
+          if (width <= 48)      { psf_M1 = psf_70_70_M1;}
+          else if (width <= 51) { psf_M1 = psf_69d4_69d4_M1;}
+          else if (width > 51)  { MaxExceeded = MaxWidthPerPanel + 51 + "\""; }
+      }
+      else if (height <= 120)
+          {
+          if (width <= 36)      { psf_M1 = psf_70_70_M1; }
+          else if (width <= 42) { psf_M1 = psf_69d9_69d9_M1; }
+          else if (width <= 48) { psf_M1 = psf_62d1_62d1_M1; }
+          else if (width > 48)  { psf_M1 = MaxWidthPerPanel + 48 + "\""; }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
     }
     if (horizontalLitesValue >= 2) {
          if (height <= 90) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
@@ -129,95 +172,37 @@ if (reinforcementSelected == 2)  {   // If Reinforcement M3 is selected then Use
     var psf_97d3_97d3_M3  = "  +97.3 / -97.3";
     var psf_82d8_82d8_M3  = "  +82.8 / -82.8";
     var psf_100_102d8_M3  = "  +100.0 / -102.8";
-
-
-
-
-
-
-
-
-
+     // M3 HORIZONTAL PANELS
+    var psf_100_136d5_M3    = "  +100.0 / -136.5";
+    var psf_100_134d3_M3    = "  +100.0 / -134.3";
+    var psf_100_134d8_M3    = "  +100.0 / -134.8";
+    var psf_100_107d8_M3    = "  +100.0 / -107.8";
+    var psf_100_138d2_M3    = "  +100.0 / -138.2";
+    var psf_100_121_M3      = "  +100.0 / -121.0";
+    var psf_100_107d5_M3    = "  +100.0 / -107.5";
+    var psf_96d8_96d8_M3    = "  +96.8 / -96.8";
+    var psf_100_124d8_M3    = "  +100.0 / -124.8";
+    var psf_100_109d2_M3    = "  +100.0 / -109.2";
+    var psf_97_97_M3        = "  +97.0 / -97.0";
+    var psf_87d3_87d3_M3    = "  +87.3 / -87.3";
+    var psf_100_113d2_M3    = "  +100.0 / -113.2";
+    var psf_99_99_M3        = "  +99.0 / -99.0";
+    var psf_88_88_M3        = "  +88.0 / -88.0";
+    var psf_86d4_86d4_M3    = "  +86.4 / -86.4";
+    var psf_100_103d1_M3    = "  +100.0 / -103.1";
+    var psf_90d2_90d2_M3    = "  +90.2 / -90.2";
+    var psf_81d7_81d7_M3    = "  +81d7 / -81d7";
+    var psf_100_110d1_M3    = "  +100.0 / -110.1";
+    var psf_82d5_82d5_M3    = "  +82.5 / -82.5";
+    var psf_79d2_79d2_M3    = "  +79.2 / -79.2";
+    var psf_86d2_86d2_M3    = "  +86.2 / -86.2";
+    var psf_75d4_75d4_M3    = "  +75.4 / -75.4";
 
 }
 
 /*
     var psf_70_70_M1     = "   +70.0 /  -70.0";                 //Page 3 of 12
     var psf_100_110_M1   = "  +100.0 / -110.0";                 //M1
-
-    var psf_52d7_52d7_M2 = "   +52.7 /  -52.7    M2 *Aluminum";
-    var psf_58_58_J2_M2     = "   +58.0 /  -58.0    M2 *Aluminum";
-    var psf_59d6_59d6_J2_M2 = "   +59.6 /  -59.6    M2 *Aluminum";
-    var psf_65_65_J2_M2     = "   +65.0 /  -65.0    M2 *Aluminum";
-
-    var psf_78d6_78d6_J2_M3 = "   +78.6 /  -78.6    M3 *Steel";
-    var psf_82d8_82d8_J2_M3 = "   +82.8 /  -82.8    M3 *Steel";
-    var psf_85_9_85d9_J2_M3 = "   +85.9 /  -85.9    M3 *Steel";
-    var psf_86d2_86d2_J2_M3 = "   +86.2 /  -86.2    M3 *Steel";
-    var psf_88d9_88d9_J2_M3 = "   +88.9 /  -88.9    M3 *Steel";
-    var psf_92d1_92d1_J2_M3 = "   +92.1 /  -92.1    M3 *Steel";
-    var psf_93d6_93d6_J2_M3 = "   +93.6 /  -93.6    M3 *Steel";
-    var psf_94d3_94d3_J2_M3 = "   +94.3 /  -94.3    M3 *Steel";
-    var psf_95d1_95d1_J2_M3 = "   +95.1 /  -95.1    M3 *Steel";
-    var psf_97d3_97d3_J2_M3 = "   +97.3 /  -97.3    M3 *Steel";
-    var psf_100_103d9_J2_M3 = "  +100.0 / -103.9    M3 *Steel";
-    var psf_100_110_J2_M3   = "  +100.0 / -110.0    M3 *Steel";
-    var psf_100_110d5_J2_M3 = "  +100.0 / -110.5    M3 *Steel";
-    var psf_100_102d4_J2_M3 = "  +100.0 / -102.4    M3 *Steel";
-    var psf_100_102d8_J2_M3 = "  +100.0 / -102.8    M3 *Steel";
-    var psf_100_111d7_J2_M3 = "  +100.0 / -111.7    M3 *Steel";
-    var psf_100_115_M3   = "  +100.0 / -115.0    M3 *Steel";
-
-    var psf_86_5_86d5_J2_M3_CRS = "  +86.5 /  -86.5    M3 *Cold Rolled";
-    var psf_100_101d4_J2_M3_CRS = " +100.0 / -101.4    M3 *Cold Rolled";
-    var psf_100_105d9_J2_M3_CRS = " +100.0 / -105.9    M3 *Cold Rolled";
-    var psf_100_106d6_J2_M3_CRS = " +100.0 / -106.6    M3 *Cold Rolled";
-    var psf_100_107d6_J2_M3_CRS = " +100.0 / -107.6    M3 *Cold Rolled";
-    var psf_100_110_J2_M3_CRS   = " +100.0 / -110.0    M3 *Cold Rolled";
-    var psf_100_115_J2_M3_CRS   = " +100.0 / -115.0    M3 *Cold Rolled";
-    // END OF FULL VIEW PANELS TABLE
-
-    //START OF HORIZONTAL DIVISIONS TABLE   PAGE - 4 of 12
-    var psf_58d4_58d4_M1 ="  +58.4 / -58.4 ";
-    var psf_64d1_64d1_M1 ="  +64.1 / -64.1 ";
-
-    var psf_68d1_68d1_M1 ="  +68.1 / -68.1 ";
-    var psf_92_92_M1     ="  +92.0 / -92.0 ";
-    var psf_97d7_97d7_M1 ="  +97.7 / -97.7 ";
-    var psf_100_103d8_M1 =" +100.0 / -103.8";
-    var psf_100_104d1_M1 =" +100.0 / -104.1";
-    var psf_100_105d1_M1 =" +100.0 / -105.1";
-    var psf_100_106_M1   =" +100.0 / -106.0";
-
-    var psf_75d4_75d4_J2_M3 = "  +75.4 / -75.4    M3 *Steel";
-    var psf_79d2_79d2_J2_M3 = "  +79.2 / -79.2    M3 *Steel";
-    var psf_81d7_81d7_J2_M3 = "  +81.7 / -81.7    M3 *Steel";
-    var psf_82d5_82d5_J2_M3 = "  +82.5 / -82.5    M3 *Steel";
-    var psf_86d2_86d2_J2_M3 = "  +86.2 / -86.2    M3 *Steel";
-    var psf_86d4_86d4_J2_M3 = "  +86.4 / -86.4    M3 *Steel";
-    var psf_87d3_87d3_J2_M3 = "  +87.3 / -87.3    M3 *Steel";
-    var psf_88_88_J2_M3     = "  +88.0 / -88.0    M3 *Steel";
-    var psf_90d2_90d2_J2_M3 = "  +90.2 / -90.2    M3 *Steel";
-    var psf_96d8_96d8_J2_M3 = "  +96.8 / -96.8    M3 *Steel";
-    var psf_97_97_J2_M3     = "  +97.0 / -97.0    M3 *Steel";
-    var psf_99_99_J2_M3     = "  +99.0 / -99.0    M3 *Steel";
-    var psf_100_100d5_J2_M3 = " +100.0 /-100.5    M3 *Steel";
-    var psf_100_107d5_J2_M3 = " +100.0 /-107.5    M3 *Steel";
-    var psf_100_107d8_J2_M3 = " +100.0 /-107.8    M3 *Steel";
-    var psf_100_109d2_J2_M3 = " +100.0 /-109.2    M3 *Steel";
-    var psf_100_103d1_J2_M3 = " +100.0 /-103.1    M3 *Steel";
-
-    // Reinforced Cold Steel with Horizontal Divisions page 4 of 12
-    var psf_82d2_82d2_J2_M3_CRS = " +82.2 / -82.2     M3 *Cold Rolled";
-    var psf_85d7_85d7_J2_M3_CRS = " +85.7 / -85.7     M3 *Cold Rolled";
-    var psf_88d6_88d6_J2_M3_CRS = " +88.6 / -88.6     M3 *Cold Rolled";
-    var psf_97d9_97d9_J2_M3_CRS = " +97.9 / -97.9     M3 *Cold Rolled";
-    var psf_98d2_98d2_J2_M3_CRS = " +98.2 / -98.2     M3 *Cold Rolled";
-    var psf_100_100_J2_M3_CRS =   " +100.0 / -100.0   M3 *Cold Rolled";
-    var psf_100_104d2_J2_M3_CRS = " +100.0 / -104.2   M3 *Cold Rolled";
-
-
-
     //Check for Horizontal Divisions - If = 1 Use FULL VIEW TABLE BECAUSE THERE ARE NO DIVISIONS
     if (horizontalLitesValue == 1) {
         if (height <= 90) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
@@ -424,6 +409,6 @@ if (verticalLitesValue == 1) {document.getElementById("J1").style.display = "inl
         document.getElementById("M3_CRS").style.display = "inline";
         }
       }
+    }
   //  var result = psfResult;
     //document.getElementById("widthInput").focus();
-  }
