@@ -93,7 +93,7 @@
                           </select>
                           <span class="glyphicon glyphicon-link" id="reinforcementIcon"></span>
 
-            <input type="button" value="Calculate" class="contactmeboxes" id="calculate_btn" onclick="CalculatePSF()">
+            <input type="button" value="Calculate" class="contactmeboxes" id="calculate_btn" onclick="CalculatePSF.apply(this, RetrieveInput());">
             <input type="reset" value="Reset" class="contactmeboxes" id="reset_btn" onclick="ResetFields()">
 
 
