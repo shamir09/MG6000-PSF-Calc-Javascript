@@ -3,6 +3,7 @@ function ResetFields() {
     var psfResult = "+ / -";
     document.getElementById("PSF_Result_Div").innerHTML = psfResult;
     document.getElementById("J1").style.display = "none";
+    document.getElementById("J1_Alum").style.display = "none";
     document.getElementById("M1").style.display = "none";
     document.getElementById("M2").style.display = "none";
     document.getElementById("M3_S").style.display = "none";
@@ -17,8 +18,8 @@ document.onkeydown = function (evt) {
         document.getElementById("widthInput").focus();
     }
     if (evt.keyCode == 13) {             /////// IF ENTER KEY IS PRESSED (TRIGGER CALCULATE BUTTON)
-        CalculatePSF();
-        }
+        CalculatePSF.apply(this, RetrieveInput());
+    }
 };
 
 
@@ -115,7 +116,7 @@ if (reinforcementSelected == 0)  {
               psf_M1 = "To exceed 120\" height consider Aluminum Reinforcement";
                 }
     }
-    if (horizontalLitesValue >= 2) {
+    else if (horizontalLitesValue >= 2) {
          if (height <= 90) {                           // At Height of 90"   &   Width:  30", 36", 42", 48", 54", 55", 60"            M1 / J1
             if (width <= 48) { psf_M1 = psf_100_110_M1; }
             else if (width <= 54) { psf_M1 = psf_100_106_M1; }
@@ -206,9 +207,43 @@ if (reinforcementSelected == 1)  {
             else if (height > 144) {
                 psf_M1 = "The system has a max height of 144\"";
                   }
-
     }
-}
+    else if (horizontalLitesValue >=2) {
+            if (height <= 120) {
+                if (width <= 58) { psf_M2 = psf_65_65_M2; }
+                else if (width > 58) { psf_M2 = MaxExceeded + 58 + '\"'; }
+              }
+            else if (height <= 126)
+              {
+                  if (width <= 55)  { psf_M2 = psf_65_65_M2; }
+
+                  else if (width > 55) { psf_M2 = MaxExceeded + 55 + '\"'; }
+                }
+            else if (height <= 132)                      // At Height of 102"  &   Width:  30", 36", 42", 48", 54", 57"                       M1 / J1
+                {                                        // &   Width:  30", 36", 42", 48", 54", 60" 66", 71"    J1 / M3
+                if (width <= 48) { psf_M2 = psf_65_65_M2; }
+                else if (width <= 53) { psf_M2 = psf_59d4_59d4_M2; }
+                else if (width > 53)  { MaxExceeded = MaxWidthPerPanel + 53 + "\""; }
+              }
+            else if (height <= 138)                      // At Height of 108"   &   Width:  30", 36", 42", 48", 54"                          M1 / J1
+            {                                            // At Height of 108"   &   Width:  30", 36", 42", 48", 54" 60" 66" 67"              J1 / M3
+                if      (width <= 42) { psf_M2 = psf_65_65_M2; }
+                else if (width <= 48) { psf_M2 = psf_57d4_57d4_M2; }
+                else if (width <= 50) { psf_M2 = psf_55d1_55d1_M2; }
+                else if (width > 50)  { MaxExceeded = MaxWidthPerPanel + 50 + "\""; }
+            }
+            else if (height <= 144)                      // At Height of 114"   &   Width:  30", 36", 42", 48", 51"                         M1 / J1
+            {                                            // &   Width:  30", 36", 42", 48", 54" 60" 63"                                     J1 / M3
+                if (width <= 48)     { psf_M2 = psf_65_65_M2; }
+                else if (width <= 42) { psf_M2 = psf_57d7_57d7_M2;}
+                else if (width <= 48) { psf_M2 = psf_50d5_50d5_M2;}
+                else if (width > 48)  { MaxExceeded = MaxWidthPerPanel + 48 + "\""; }
+            }
+            else if (height > 144) {
+                psf_M1 = "The system has a max height of 144\"";
+                  }
+      }
+  }
 //  M3 (STEEL REINFORCMENT)  == THIRD Table in Page 3 of 12.   -line breaks indicate new table
 if (reinforcementSelected == 2)  {   // If Reinforcement M3 is selected then Use the THIRD Table in Page 3 of 12.
     // FULL VIEW PANELS
@@ -264,13 +299,17 @@ if (reinforcementSelected == 2)  {   // If Reinforcement M3 is selected then Use
 
 }
 
-
-
     ResetFields();
-    if(psf_M1 != undefined) { document.getElementById("PSF_Result_Div").innerHTML = psf_M1;  }
+
+    if(psf_M1 != undefined) {
+          if(height < 120) { document.getElementById("PSF_Result_Div").innerHTML = psf_M1;
+                             document.getElementById("J1").style.display = "inline";                   // OPTION 1 - JAMB   - NO REINF
+                           }
+          else if(height >= 120)   {document.getElementById("J1_Alum").style.display = "inline";}      // OPTION 1 - JAMB   - ALUM REINF   after 120" Height as per Page 9 of 12.
+}
     else if(psf_M2 != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M2;  }
 
-if (verticalLitesValue >= 1) {document.getElementById("J1").style.display = "inline";}     // OPTION 1 - JAMB   - NO REINF
+
 
   if (verticalLitesValue > 1) {
       if(psf_M1 != undefined){                                                             // OPTION 1   - MULL -NO REINF
