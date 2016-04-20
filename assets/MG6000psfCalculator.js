@@ -305,7 +305,9 @@ if (reinforcementSelected == 2)  {   // If Reinforcement M3 is selected then Use
           if(height < 120) { document.getElementById("PSF_Result_Div").innerHTML = psf_M1;
                              document.getElementById("J1").style.display = "inline";                   // OPTION 1 - JAMB   - NO REINF
                            }
-          else if(height >= 120)   {document.getElementById("J1_Alum").style.display = "inline";}      // OPTION 1 - JAMB   - ALUM REINF   after 120" Height as per Page 9 of 12.
+          else if(height >= 120)   {
+                            document.getElementById("PSF_Result_Div").innerHTML = psf_M1
+                            document.getElementById("J1_Alum").style.display = "inline";}      // OPTION 1 - JAMB   - ALUM REINF   after 120" Height as per Page 9 of 12.
 }
     else if(psf_M2 != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M2;  }
 
