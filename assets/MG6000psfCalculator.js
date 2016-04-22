@@ -300,8 +300,7 @@ if (reinforcementSelected == 2)  {   // If Reinforcement M3 is selected then Use
 }
 
     ResetFields();
-
-    if(psf_M1 != undefined) {
+    if(psf_M1 != undefined || psf_M2 != undefined) {                                         // If PSF1 & PSF2 have values assigned show IMG ALUM or ALUM REINF
           if(height < 120) { document.getElementById("PSF_Result_Div").innerHTML = psf_M1;
                              document.getElementById("J1").style.display = "inline";                   // OPTION 1 - JAMB   - NO REINF
                            }
@@ -311,6 +310,9 @@ if (reinforcementSelected == 2)  {   // If Reinforcement M3 is selected then Use
 }
     else if(psf_M2 != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M2;  }
 
+/////////////// PRINT THE RESULT TO THE WINDLOAD CALCULATION ID ELEMENT  //////////////////////
+    if(psf_M1 != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M1     }
+    if(psf_M2 != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M2;    }
 
 
   if (verticalLitesValue > 1) {
