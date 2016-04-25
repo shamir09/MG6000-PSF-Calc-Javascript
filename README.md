@@ -5,16 +5,16 @@
 
 ### System Approval: FL18411
 
-#### This webpage was created to facilitate the calculation of the Windload capacity the MG-6000 Series. 
+#### This webpage was created to facilitate the calculation of the Windload capacity for the MG-6000 Series.
 The MG-6000 is an Impact Resistant Storefront/Fixed Window System that supports 9/16" Laminated or 1 5/16" Laminated Insulated
 Glass with both PVB & SGP options and can widthstand Wind Loads of -100.0 / +115.0 PSF.
 
-#### INPUT - the program uses 5 input fields to calculate Windload.
+#### INPUT - the program uses 5 variables to calculate Windload.
 		 *Width            (format accepted: inches ")
 		 *Height           (format accepted: inches ")
 		 *Vertical Lites   (format accepted: integer)
 		 *Horizontal Lites (format accepted: integer)
-		 *Reinfocerment type(None, Aluminum, Steel, Cold Rolled Steel.
+		 *Reinforcement type (None, Aluminum, Steel, Cold Rolled Steel.)
 			 Features Under Development:
 				 Glass Interlayer Composition (PVB or SGP)
 				 Screw Options and corresponding pressures
@@ -30,5 +30,5 @@ Have a question or feature you'd recommend? Tell us.
 ###### SHAMIR AJATE     shamir@mrglasswindows.com @shamir09
 ###### YUDIEL CURBELO   yudiel@mrglasswindows.com @yudielcurbelo
 ###### DANIEL GONZALEZ  daniel@mrglasswindows.com @daniglezl
-	
+
 ### See it run live:         [Mr.Glass MG-6000 Series Storefront](http://www.shamirajate.com/mg6000/index.html)
