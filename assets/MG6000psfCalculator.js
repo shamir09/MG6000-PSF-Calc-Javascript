@@ -42,8 +42,8 @@ function RetrieveInput(){
 
 function CalculatePSF(widthInputValue, heightInputValue, verticalLitesValue, horizontalLitesValue, reinforcementSelected) {
 
-//if (widthInputValue == undefined || widthInputValue == "") {alert("Please enter a Width"); return}
-//if (heightInputValue == undefined || heightInputValue == "") {alert("Please enter a height"); return}
+    //if (widthInputValue == undefined || widthInputValue == "") {alert("Please enter a Width"); return}
+    //if (heightInputValue == undefined || heightInputValue == "") {alert("Please enter a height"); return}
 
   var width = widthInputValue / verticalLitesValue;
   var height = heightInputValue;
@@ -164,6 +164,7 @@ if (reinforcementSelected == 0)  {
                           }
       }
 }
+
 //  M2 (ALUMINUM REINFORCMENT)  == SECOND Table in Page 3 of 12.   -line breaks indicate new table
 if (reinforcementSelected == 1)  {
     // FULL VIEW PANELS
@@ -254,6 +255,7 @@ if (reinforcementSelected == 1)  {
                                     }
                 }
   }
+
 //  M3 (STEEL REINFORCMENT)  == THIRD Table in Page 3 of 12.   -line breaks indicate new table
 if (reinforcementSelected == 2)  {   // If Reinforcement M3 is selected then Use the THIRD Table in Page 3 of 12.
     // FULL VIEW PANELS
@@ -458,7 +460,47 @@ if (reinforcementSelected == 2)  {   // If Reinforcement M3 is selected then Use
                                                           else if (width <= 48) { psf_M3 = psf_75d4_75d4_M3; }
                                                           else if (width > 48) { psf_M3 = MaxExceeded + 48 + '\"'; }
                                                     }
+                                                          else if (height > 144)
+                                                          {
+                                                              psf_M1 = "The system has a max height of 144\"";
+                                                          }
       }
+}
+
+//  M3 (COLD ROLLED STEEL REINFORCMENT)  == THIRD Table in Page 3 of 12.   -line breaks indicate new table
+if (reinforcementSelected == 3)  {   // If Reinforcement M3 is selected then Use the THIRD Table in Page 3 of 12.
+  ///PRESSURES FOR FULL VIEW PANELS
+  var psf_100_145_M3_CRS    = "  +100.0 / -145.0";
+  var psf_100_115_M3_CRS    = "  +100.0 / -115.0";
+  var psf_100_138d7_M3_CRS  = "  +100.0 / -138.7";
+  var psf_100_107d6_M3_CRS  = "  +100.0 / -107.6";
+  var psf_100_105d9_M3_CRS  = "  +100.0 / -105.9";
+  var psf_100_101d4_M3_CRS  = "  +100.0 / -101.4";
+  var psf_89d7_89d7_M3_CRS  = "  +89.7 / -89.7";
+  var psf_86d5_86d5_M3_CRS  = "  +86.5 / -86.5";
+
+  //PRESSURES FOR HORIZONTAL DIVISIONS
+  var psf_100_130d3_M3_CRS  = "  +100.0 / -130.3";
+  var psf_100_104d2_M3_CRS  = "  +100.0 / -104.2";
+  var psf_100_110_M3_CRS  = "  +100.0 / -110.0";
+  var psf_100_100_M3_CRS  = "  +100.0 / -100.0";
+  var psf_98d2_98d2_M3_CRS  = "  +98.2 / -98.2";
+  var psf_100_111d9_M3_CRS  = "  +100.0 / -111.9";
+  var psf_97d9_97d9_M3_CRS  = "  +97.9 / -97.9";
+  var psf_88d6_88d6_M3_CRS  = "  +88.6 / -88.6";
+  var psf_100_114d2_M3_CRS  = "  +100.0 / -114d2";
+  var psf_97d9_97d9_M3_CRS  = "  +97.9/ -97.9";
+  var psf_85d7_85d7_M3_CRS  = "  +85.7 / -85.7";
+  var psf_82d2_82d2_M3_CRS  = "  +82.2 / -82.2";
+
+  if (horizontalLitesValue == 1)
+  {
+          if (height <= 114)
+          {
+              if (width <= 48) { psf_M3_CRS = psf_100_145_M3; }
+              else if (width > 67) { psf_M3_CRS = MaxExceeded + 67 + '\"'; }
+          }
+  }
 }
 
     ResetFields();
