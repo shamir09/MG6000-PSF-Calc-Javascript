@@ -482,8 +482,8 @@ if (reinforcementSelected == 3)  {   // If Reinforcement M3 is selected then Use
   //PRESSURES FOR HORIZONTAL DIVISIONS
   var psf_100_130d3_M3_CRS  = "  +100.0 / -130.3";
   var psf_100_104d2_M3_CRS  = "  +100.0 / -104.2";
-  var psf_100_110_M3_CRS  = "  +100.0 / -110.0";
-  var psf_100_100_M3_CRS  = "  +100.0 / -100.0";
+  var psf_100_110_M3_CRS    = "  +100.0 / -110.0";
+  var psf_100_100_M3_CRS    = "  +100.0 / -100.0";
   var psf_98d2_98d2_M3_CRS  = "  +98.2 / -98.2";
   var psf_100_111d9_M3_CRS  = "  +100.0 / -111.9";
   var psf_97d9_97d9_M3_CRS  = "  +97.9 / -97.9";
@@ -497,14 +497,14 @@ if (reinforcementSelected == 3)  {   // If Reinforcement M3 is selected then Use
   {
           if (height <= 114)
           {
-              if (width <= 48) { psf_M3_CRS = psf_100_145_M3; }
+              if (width <= 48) { psf_M3_CRS = psf_100_145_M3_CRS; }
               else if (width > 67) { psf_M3_CRS = MaxExceeded + 67 + '\"'; }
           }
   }
 }
 
     ResetFields();
-    if(psf_M1 != undefined || psf_M2 != undefined || psf_M3 != undefined) {                                         // If PSF1 & PSF2 have values assigned show IMG ALUM or ALUM REINF
+    if(psf_M1 != undefined || psf_M2 != undefined || psf_M3 != undefined || psf_M3_CRS != undefined) {                                         // If PSF1 & PSF2 have values assigned show IMG ALUM or ALUM REINF
           if(height < 120) { document.getElementById("PSF_Result_Div").innerHTML = psf_M1;
                              document.getElementById("J1").style.display = "inline";                   // OPTION 1 - JAMB   - NO REINF
                            }
@@ -518,7 +518,7 @@ if (reinforcementSelected == 3)  {   // If Reinforcement M3 is selected then Use
     if(psf_M1 != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M1     }
     if(psf_M2 != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M2;    }
     if(psf_M3 != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M3;    }
-
+    if(psf_M3_CRS != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M3_CRS;    }
 
   if (verticalLitesValue > 1) {
       if(psf_M1 != undefined){                                                             // OPTION 1   - MULL -NO REINF
