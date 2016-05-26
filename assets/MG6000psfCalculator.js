@@ -8,6 +8,8 @@ function ResetFields() {
     document.getElementById("M2").style.display = "none";
     document.getElementById("M3_S").style.display = "none";
     document.getElementById("M3_CRS").style.display = "none";
+    document.getElementById("warningIcon").style.display = "none";
+    document.getElementById("PSF_Result_Div").classList.add("PSF_Result_Div");
     }
 
 document.onkeydown = function (evt) {
@@ -154,7 +156,7 @@ function Reinf0() {
                           }
                           else if (height > 120)
                           {
-                            psf_M1 = "To exceed 120\" height consider Aluminum Reinforcement";
+                              psf_M1 = "The system has a max height of 120\"";
                           }
       }
   }
@@ -383,7 +385,6 @@ function Reinf2() {
                                                           else if (height > 144)
                                                           {
                                                               psf_M1 = "The system has a max height of 144\"";
-                                                              return;
                                                           }
   }
   if (horizontalLitesValue >= 2)
@@ -459,81 +460,93 @@ function Reinf2() {
     }
 }
 function Reinf3() {
-///PRESSURES FOR FULL VIEW PANELS
-var psf_100_145_M3_CRS    = "  +100.0 / -145.0";
-var psf_100_115_M3_CRS    = "  +100.0 / -115.0";
-var psf_100_138d7_M3_CRS  = "  +100.0 / -138.7";
-var psf_100_107d6_M3_CRS  = "  +100.0 / -107.6";
-var psf_100_105d9_M3_CRS  = "  +100.0 / -105.9";
-var psf_100_101d4_M3_CRS  = "  +100.0 / -101.4";
-var psf_89d7_89d7_M3_CRS  = "  +89.7 / -89.7";
-var psf_86d5_86d5_M3_CRS  = "  +86.5 / -86.5";
+      ///PRESSURES FOR FULL VIEW PANELS
+      var psf_100_145_M3_CRS    = "  +100.0 / -145.0";
+      var psf_100_115_M3_CRS    = "  +100.0 / -115.0";
+      var psf_100_138d7_M3_CRS  = "  +100.0 / -138.7";
+      var psf_100_107d6_M3_CRS  = "  +100.0 / -107.6";
+      var psf_100_105d9_M3_CRS  = "  +100.0 / -105.9";
+      var psf_100_101d4_M3_CRS  = "  +100.0 / -101.4";
+      var psf_89d7_89d7_M3_CRS  = "  +89.7 / -89.7";
+      var psf_86d5_86d5_M3_CRS  = "  +86.5 / -86.5";
 
-//PRESSURES FOR HORIZONTAL DIVISIONS
-var psf_100_130d3_M3_CRS  = "  +100.0 / -130.3";
-var psf_100_104d2_M3_CRS  = "  +100.0 / -104.2";
-var psf_100_110_M3_CRS    = "  +100.0 / -110.0";
-var psf_100_100_M3_CRS    = "  +100.0 / -100.0";
-var psf_98d2_98d2_M3_CRS  = "  +98.2 / -98.2";
-var psf_100_111d9_M3_CRS  = "  +100.0 / -111.9";
-var psf_97d9_97d9_M3_CRS  = "  +97.9 / -97.9";
-var psf_88d6_88d6_M3_CRS  = "  +88.6 / -88.6";
-var psf_100_114d2_M3_CRS  = "  +100.0 / -114d2";
-var psf_97d9_97d9_M3_CRS  = "  +97.9/ -97.9";
-var psf_85d7_85d7_M3_CRS  = "  +85.7 / -85.7";
-var psf_82d2_82d2_M3_CRS  = "  +82.2 / -82.2";
+      //PRESSURES FOR HORIZONTAL DIVISIONS
+      var psf_100_130d3_M3_CRS  = "  +100.0 / -130.3";
+      var psf_100_104d2_M3_CRS  = "  +100.0 / -104.2";
+      var psf_100_110_M3_CRS    = "  +100.0 / -110.0";
+      var psf_100_100_M3_CRS    = "  +100.0 / -100.0";
+      var psf_98d2_98d2_M3_CRS  = "  +98.2 / -98.2";
+      var psf_100_111d9_M3_CRS  = "  +100.0 / -111.9";
+      var psf_97d9_97d9_M3_CRS  = "  +97.9 / -97.9";
+      var psf_88d6_88d6_M3_CRS  = "  +88.6 / -88.6";
+      var psf_100_114d2_M3_CRS  = "  +100.0 / -114d2";
+      var psf_97d9_97d9_M3_CRS  = "  +97.9/ -97.9";
+      var psf_85d7_85d7_M3_CRS  = "  +85.7 / -85.7";
+      var psf_82d2_82d2_M3_CRS  = "  +82.2 / -82.2";
 
-    if (horizontalLitesValue == 1)
-    {
-          if (height <= 114)
+          if (horizontalLitesValue == 1)
           {
-              if (width <= 48) { psf_M3_CRS = psf_100_145_M3_CRS; }
-              else if (width > 67) { psf_M3_CRS = MaxExceeded + 67 + '\"'; }
+                if (height <= 114)
+                {
+                    if (width <= 48) { psf_M3_CRS = psf_100_145_M3_CRS; }
+                    else if (width > 67) { psf_M3_CRS = MaxExceeded + 67 + '\"'; }
+                }
           }
-    }
-}
+      }
 
 
-    //if (heightInputValue == undefined || heightInputValue == "") {alert("Please enter a height"); return}
+      //if (heightInputValue == undefined || heightInputValue == "") {alert("Please enter a height"); return}
 
-  var width = widthInputValue / verticalLitesValue;
-  var height = heightInputValue;
-  var psf_M1, psf_M2, psf_M3, psf_M3_CRS;
+    var width = widthInputValue / verticalLitesValue;
+    var height = heightInputValue;
+    var psf_M1, psf_M2, psf_M3, psf_M3_CRS;
 
-  var MaxExceeded = "NOA Maximum Width per Panel at this height is ";
+    var MaxExceeded = "NOA Maximum Width per Panel at this height is ";
 
 
-//  M1 (No REINFORCMENT)  == FIRST Table in Page 3 of 12.
-if (reinforcementSelected == 0)  {
-  Reinf0();
-}
+  //  M1 (No REINFORCMENT)  == FIRST Table in Page 3 of 12.
+  if (reinforcementSelected == 0)  {
+    Reinf0();
+  }
 
-//  M2 (ALUMINUM REINFORCMENT)  == SECOND Table in Page 3 of 12.   -line breaks indicate new table
-if (reinforcementSelected == 1)  {
-    if ( height <= 120) { Reinf0();  }
-    else if (height > 120) {Reinf1();  }
-}
+  //  M2 (ALUMINUM REINFORCMENT)  == SECOND Table in Page 3 of 12.   -line breaks indicate new table
+  if (reinforcementSelected == 1)  {
+      if ( height <= 120) { Reinf0();  }
+      else if (height > 120) {Reinf1();  }
+  }
 
-//  M3 (STEEL REINFORCMENT)  == THIRD Table in Page 3 of 12.   -line breaks indicate new table
-if (reinforcementSelected == 2)  {   // If Reinforcement M3 is selected then Use the THIRD Table in Page 3 of 12.
-    Reinf2();
-}
-//  M3 (COLD ROLLED STEEL REINFORCMENT)  == THIRD Table in Page 3 of 12.   -line breaks indicate new table
-if (reinforcementSelected == 3)  {   // If Reinforcement M3 is selected then Use the THIRD Table in Page 3 of 12.
-    Reinf3();
-}
+  //  M3 (STEEL REINFORCMENT)  == THIRD Table in Page 3 of 12.   -line breaks indicate new table
+  if (reinforcementSelected == 2)  {   // If Reinforcement M3 is selected then Use the THIRD Table in Page 3 of 12.
+      Reinf2();
+  }
+  //  M3 (COLD ROLLED STEEL REINFORCMENT)  == THIRD Table in Page 3 of 12.   -line breaks indicate new table
+  if (reinforcementSelected == 3)  {   // If Reinforcement M3 is selected then Use the THIRD Table in Page 3 of 12.
+      Reinf3();
+  }
 
 ResetFields();
 if(psf_M1 != undefined || psf_M2 != undefined || psf_M3 != undefined || psf_M3_CRS != undefined) {                                         // If PSF1 & PSF2 have values assigned show IMG ALUM or ALUM REINF
-          if(height < 120) { document.getElementById("PSF_Result_Div").innerHTML = psf_M1;
+          if(height <= 120) { document.getElementById("PSF_Result_Div").innerHTML = psf_M1;
                              document.getElementById("J1").style.display = "inline";                   // OPTION 1 - JAMB   - NO REINF
                            }
-          else if(height >= 120)
+          else if(height > 120 && height <= 144)
            {
                             document.getElementById("PSF_Result_Div").innerHTML = psf_M1
                             document.getElementById("J1_Alum").style.display = "inline";}      // OPTION 1 - JAMB   - ALUM REINF   after 120" Height as per Page 9 of 12.
             }
-
+if(psf_M1 == undefined || psf_M2 == undefined || psf_M3 == undefined || psf_M3_CRS == undefined) {
+            if(height > 144 ||
+                (reinforcementSelected == 0 &&
+                (width > 60 && height > 96)) ||
+                (reinforcementSelected == 0 && height > 120))
+             {
+                document.getElementById("PSF_Result_Div").classList.remove("PSF_Result_Div");
+                document.getElementById("PSF_Result_Div").classList.add("activeWarning");      // OPTION 1 - JAMB   - ALUM REINF   after 120" Height as per Page 9 of 12.
+                document.getElementById("warningIcon").style.display = "inline";
+                document.getElementById("J1_Alum").style.display = "none";
+                document.getElementById("J1").style.display = "none";
+              }
+}
 /////////////// PRINT THE RESULT TO THE WINDLOAD CALCULATION ID ELEMENT  //////////////////////
     if(psf_M1 != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M1     }
     if(psf_M2 != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M2;    }

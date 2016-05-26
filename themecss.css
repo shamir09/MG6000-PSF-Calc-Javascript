@@ -56,6 +56,7 @@ form-lbl {
       padding-top: 6px;
       padding-bottom: 6px;
       border-radius: 4px;
+      background-color: white;
 }
 #calculate_btn {
         width: 300px;
@@ -94,6 +95,14 @@ form-lbl {
     width: 200px;
     height: 200px;
     }
+#warningIcon {
+display: none;
+width: 130px;
+height: 130px;
+padding: 5px;
+transition: 1s;
+}
+
 h1 {
     color: white;
     font-family: 'Trebuchet MS';
@@ -119,16 +128,29 @@ h1 {
   width:40%;
   height:inherit;
 }
+.activeWarning {
+  background-color: #FFA500;
+  width: 300px;
+  height: 55px;
+  border-radius: 5px;
+  transition: 1s;
+  color: white;
+  padding: 5px;
+  margin-bottom: -20px;
+}
 .dropdown, .container{
   text-align: left;
   display: inline-block;
   }
+
 .PSF_Result_Div {
   background: #48B748;
   border-radius: 20px;
   color: white;
   padding: 10px;
   width: 130px;
+  height: 39px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0px;
 }
