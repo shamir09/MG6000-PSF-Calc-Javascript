@@ -489,11 +489,105 @@ function Reinf3() {
                 if (height <= 114)
                 {
                     if (width <= 48) { psf_M3_CRS = psf_100_145_M3_CRS; }
-                    else if (width > 67) { psf_M3_CRS = MaxExceeded + 67 + '\"'; }
+                    else if (width <= 63) { psf_M3_CRS = psf_100_115_M3_CRS; }
+                    else if (width > 63) { psf_M3_CRS = MaxExceeded + 63 + '\"'; }
                 }
+                else if (height <= 120)
+                {
+                    if (width <= 42) { psf_M3_CRS = psf_100_145_M3_CRS; }
+                    else if (width <= 48) { psf_M3_CRS = psf_100_138d7_M3_CRS; }
+                    else if (width <= 60) { psf_M3_CRS = psf_100_115_M3_CRS; }
+                    else if (width > 60) { psf_M3_CRS = MaxExceeded + 60 + '\"'; }
+                }
+                else if (height <= 126)
+                {
+                    if (width <= 48) { psf_M3_CRS = psf_100_110_M3_CRS; }
+                    else if (width <= 54) { psf_M3_CRS = psf_100_107d6_M3_CRS; }
+                    else if (width <= 55) { psf_M3_CRS = psf_100_105d9_M3_CRS; }
+                    else if (width > 55) { psf_M3_CRS = MaxExceeded + 55 + '\"'; }
+                }
+                else if (height <= 132)
+                {
+                    if (width <= 53) { psf_M3_CRS = psf_100_115_M3_CRS; }
+                    else if (width > 53) { psf_M3_CRS = MaxExceeded + 53 + '\"'; }
+                }
+                else if (height <= 138)
+                {
+                    if (width <= 36) { psf_M3_CRS = psf_100_115_M3_CRS; }
+                    else if (width <= 42) { psf_M3_CRS = psf_100_101d4_M3_CRS; }
+                    else if (width <= 48) { psf_M3_CRS = psf_89d7_89d7_M3_CRS; }
+                    else if (width <= 50) { psf_M3_CRS = psf_86d5_86d5_M3_CRS; }
+                    else if (width > 50) { psf_M3_CRS = MaxExceeded + 50 + '\"'; }
+                }
+
+
+
+                if (horizontalLitesValue == 2)
+                {
+                      if (height <= 96)
+                      {
+                          if (width <= 60) { psf_M3_CRS = psf_100_145_M3_CRS; }
+                          else if (width > 60) { psf_M3_CRS = MaxExceeded + 60 + '\"'; }
+                      }
+                      else if (height <= 102)
+                      {
+                          if (width <= 60) { psf_M3_CRS = psf_100_145_M3_CRS; }
+                          else if (width > 60) { psf_M3_CRS = MaxExceeded + 60 + '\"'; }
+                      }
+                      else if (height <= 108)
+                      {
+                          if (width <= 60) { psf_M3_CRS = psf_100_145_M3_CRS; }
+                          else if (width > 60) { psf_M3_CRS = MaxExceeded + 60 + '\"'; }
+                      }
+                      else if (height <= 114)
+                      {
+                          if (width <= 48) { psf_M3_CRS = psf_100_145_M3_CRS; }
+                          else if (width <= 60) { psf_M3_CRS = psf_100_115_M3_CRS; }
+                          else if (width > 60) { psf_M3_CRS = MaxExceeded + 60 + '\"'; }
+                      }
+                      else if (height <= 120)
+                      {
+                          if (width <= 42) { psf_M3_CRS = psf_100_145_M3_CRS; }
+                          else if (width <= 48) { psf_M3_CRS = psf_100_130d3_M3_CRS; }
+                          else if (width <= 54) { psf_M3_CRS = psf_100_115_M3_CRS; }
+                          else if (width <= 50) { psf_M3_CRS = psf_100_104d2_M3_CRS; }
+                          else if (width > 50) { psf_M3_CRS = MaxExceeded + 50 + '\"'; }
+                      }
+                      else if (height <= 126)
+                      {
+                          if (width <= 42) { psf_M3_CRS = psf_100_115_M3_CRS; }
+                          else if (width <= 48) { psf_M3_CRS = psf_100_110_M3_CRS; }
+                          else if (width <= 54) { psf_M3_CRS = psf_100_100_M3_CRS; }
+                          else if (width <= 55) { psf_M3_CRS = psf_98d2_98d2_M3_CRS; }
+                          else if (width > 55) { psf_M3_CRS = MaxExceeded + 55 + '\"'; }
+                      }
+                      else if (height <= 132)
+                      {
+                          if (width <= 42) { psf_M3_CRS = psf_100_111d9_M3_CRS; }
+                          else if (width <= 48) { psf_M3_CRS = psf_97d9_97d9_M3_CRS; }
+                          else if (width <= 53) { psf_M3_CRS = psf_88d6_88d6_M3_CRS; }
+                          else if (width > 53) { psf_M3_CRS = MaxExceeded + 53 + '\"'; }
+                      }
+                      else if (height <= 138)
+                      {
+                          if (width <= 36) { psf_M3_CRS = psf_100_114d2_M3_CRS; }
+                          else if (width <= 42) { psf_M3_CRS = psf_97d9_97d9_M3_CRS; }
+                          else if (width <= 48) { psf_M3_CRS = psf_85d7_85d7_M3_CRS; }
+                          else if (width <= 50) { psf_M3_CRS = psf_82d2_82d2_M3_CRS; }
+                          else if (width > 50) { psf_M3_CRS = MaxExceeded + 50 + '\"'; }
+                      }
+                      else if (height <= 144)
+                      {
+                          if (width <= 36) { psf_M3_CRS = psf_100_110_M3_CRS; }
+                          else if (width <= 48) { psf_M3_CRS = psf_82d2_82d2_M3_CRS; }
+                          else if (width > 48) { psf_M3_CRS = MaxExceeded + 48 + '\"'; }
+                      }
+
+
+
           }
       }
-
+}
 
       //if (heightInputValue == undefined || heightInputValue == "") {alert("Please enter a height"); return}
 
