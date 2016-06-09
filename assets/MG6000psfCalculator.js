@@ -1,4 +1,13 @@
 // JavaScript source code
+function YellowWarningCSS() {
+    document.getElementById("PSF_Result_Div").classList.remove("PSF_Result_Div");
+    document.getElementById("PSF_Result_Div").classList.add("activeWarning");      // OPTION 1 - JAMB   - ALUM REINF   after 120" Height as per Page 9 of 12.
+    document.getElementById("warningIcon").style.display = "inline";
+    document.getElementById("J1_Alum").style.display = "none";
+    document.getElementById("J1").style.display = "none";
+  }
+
+
 function ResetFields() {
     var psfResult = "+ / -";
     document.getElementById("PSF_Result_Div").innerHTML = psfResult;
@@ -71,7 +80,8 @@ function Reinf0() {
               {
                 if (width <= 55) { psf_M1 = psf_100_110_M1; }
                 else if (width <= 60) { psf_M1 = psf_70_70_M1; }
-                else if (width > 60) { psf_M1 = MaxExceeded + 60 + '\"'; }
+                else if (width > 60) { psf_M1 = MaxExceeded + 60 + '\"';
+              YellowWarningCSS();}
               }
                 else if (height <= 96)                         // At Height of 96"   &   Width:  30", 36", 42", 48", 51", 54", 60"                M1 / J1
                   {                                        // At Height of 120"   &   Width:  30", 36", 42", 48", 51", 54", 60" 66", 72"      J1 / M3
@@ -618,7 +628,6 @@ function Reinf3() {
       Reinf3();
   }
 
-ResetFields();
 if(psf_M1 != undefined || psf_M2 != undefined || psf_M3 != undefined || psf_M3_CRS != undefined) {                                         // If PSF1 & PSF2 have values assigned show IMG ALUM or ALUM REINF
           if(height <= 120) { document.getElementById("PSF_Result_Div").innerHTML = psf_M1;
                              document.getElementById("J1").style.display = "inline";                   // OPTION 1 - JAMB   - NO REINF
@@ -628,18 +637,11 @@ if(psf_M1 != undefined || psf_M2 != undefined || psf_M3 != undefined || psf_M3_C
                             document.getElementById("PSF_Result_Div").innerHTML = psf_M1
                             document.getElementById("J1_Alum").style.display = "inline";}      // OPTION 1 - JAMB   - ALUM REINF   after 120" Height as per Page 9 of 12.
             }
-if(psf_M1 == undefined || psf_M2 == undefined || psf_M3 == undefined || psf_M3_CRS == undefined) {
+if(psf_M1 == undefined || psf_M2 == undefined || psf_M3 == undefined || psf_M3_CRS == undefined ) {
             if(height > 144 ||
-                (reinforcementSelected == 0 &&
-                (width > 60 && height > 96)) ||
+                (reinforcementSelected == 0 && (width > 60 && height > 96)) ||
                 (reinforcementSelected == 0 && height > 120))
-             {
-                document.getElementById("PSF_Result_Div").classList.remove("PSF_Result_Div");
-                document.getElementById("PSF_Result_Div").classList.add("activeWarning");      // OPTION 1 - JAMB   - ALUM REINF   after 120" Height as per Page 9 of 12.
-                document.getElementById("warningIcon").style.display = "inline";
-                document.getElementById("J1_Alum").style.display = "none";
-                document.getElementById("J1").style.display = "none";
-              }
+                YellowWarningCSS();
 }
 /////////////// PRINT THE RESULT TO THE WINDLOAD CALCULATION ID ELEMENT  //////////////////////
     if(psf_M1 != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M1     }
