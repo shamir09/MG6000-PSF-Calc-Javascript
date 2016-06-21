@@ -52,7 +52,10 @@ function RetrieveInput(){
 
 function CalculatePSF(widthInputValue, heightInputValue, verticalLitesValue, horizontalLitesValue, reinforcementSelected) {
 //if (widthInputValue == undefined || widthInputValue == "") {alert("Please enter a Width"); return}
-
+var MG6000 = {
+//  height: heightInputValue,
+  //reinfSelected: reinforcementSelected,-->
+};
 function Reinf0() {
     // FULL VIEW PANELS
     var psf_100_110_M1     = "  +100.0 / -110.0";
@@ -629,11 +632,12 @@ function Reinf3() {
   }
 
 if(psf_M1 != undefined || psf_M2 != undefined || psf_M3 != undefined || psf_M3_CRS != undefined) {                                         // If PSF1 & PSF2 have values assigned show IMG ALUM or ALUM REINF
-          if(height <= 120) { document.getElementById("PSF_Result_Div").innerHTML = psf_M1;
+          if(height <= 120) {ResetFields();
+                             document.getElementById("PSF_Result_Div").innerHTML = psf_M1;
                              document.getElementById("J1").style.display = "inline";                   // OPTION 1 - JAMB   - NO REINF
                            }
           else if(height > 120 && height <= 144)
-           {
+           {                ResetFields();
                             document.getElementById("PSF_Result_Div").innerHTML = psf_M1
                             document.getElementById("J1_Alum").style.display = "inline";}      // OPTION 1 - JAMB   - ALUM REINF   after 120" Height as per Page 9 of 12.
             }
@@ -643,6 +647,7 @@ if(psf_M1 == undefined || psf_M2 == undefined || psf_M3 == undefined || psf_M3_C
                 (reinforcementSelected == 0 && height > 120))
                 YellowWarningCSS();
 }
+
 /////////////// PRINT THE RESULT TO THE WINDLOAD CALCULATION ID ELEMENT  //////////////////////
     if(psf_M1 != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M1     }
     if(psf_M2 != undefined) {  document.getElementById("PSF_Result_Div").innerHTML = psf_M2;    }
@@ -663,6 +668,9 @@ if(psf_M1 == undefined || psf_M2 == undefined || psf_M3 == undefined || psf_M3_C
         document.getElementById("M3_CRS").style.display = "inline";
         }
       }
+
+
+
 }
   //  var result = psfResult;
     //document.getElementById("widthInput").focus();
