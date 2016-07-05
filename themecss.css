@@ -131,7 +131,6 @@ h1 {
 .activeWarning {
   background-color: #FFA500;
   width: 300px;
-  height: 55px;
   border-radius: 5px;
   transition: 1s;
   color: white;
@@ -149,7 +148,6 @@ h1 {
   color: white;
   padding: 10px;
   width: 130px;
-  height: 39px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0px;
